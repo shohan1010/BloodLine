@@ -1,0 +1,361 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/drawer_layout"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".Home_frag">
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:ignore="UselessParent">
+
+        <TextView
+            android:id="@+id/a1"
+            android:layout_marginTop="40sp"
+            android:paddingStart="100dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:text="@string/reseach_center"
+            tools:ignore="RtlSymmetry"
+            app:drawableStartCompat="@drawable/location_icon_register" />
+        <TextView
+            android:id="@+id/location_report"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingStart="40dp"
+            android:textSize="20sp"
+            android:text="@string/rajshahi_medical_college_rajshahi"
+            tools:ignore="RtlSymmetry" />
+
+        <ImageView
+            android:layout_width="match_parent"
+
+            android:layout_height="wrap_content"
+            android:layout_marginTop="0dp"
+            android:padding="50dp"
+
+
+            android:src="@drawable/report_frag_icon_cardview"
+            android:contentDescription="@string/todo">
+
+        </ImageView>
+
+
+
+        <GridLayout
+
+            android:id="@+id/mainGrid"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="5"
+            android:alignmentMode="alignMargins"
+            android:columnCount="3"
+            android:columnOrderPreserved="false"
+            android:padding="5dp"
+            android:rowCount="4">
+
+            <!-- Row 1 -->
+
+            <!-- Column 1 -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/find_donors"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:clickable="true"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="1"
+                android:layout_marginLeft="6dp"
+                android:layout_marginRight="6dp"
+                android:layout_marginBottom="6dp"
+                android:focusable="true">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal|center_vertical"
+                    android:orientation="vertical"
+                    tools:ignore="UseCompoundDrawables">
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/_6_mmol_l"
+                        android:textAlignment="center"
+                        android:textColor="@android:color/black"
+                        android:textSize="20sp" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/glucose"
+                        android:layout_marginTop="25sp"
+                        android:textAlignment="center"
+                        android:textColor="@color/gray"
+                        android:textSize="18sp"
+                        android:paddingStart="15sp"
+                        android:textStyle="bold"
+                        tools:ignore="RtlSymmetry" />
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <!-- Column 2 -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/donates"
+                android:foreground="?attr/selectableItemBackground"
+                android:clickable="true"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="1"
+                android:layout_marginLeft="6dp"
+                android:layout_marginRight="6dp"
+                android:layout_marginBottom="6dp"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="8dp"
+                android:focusable="true">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal|center_vertical"
+                    android:orientation="vertical"
+                    tools:ignore="UseCompoundDrawables">
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/_6_2_mmol_l"
+                        android:textAlignment="center"
+                        android:textColor="@android:color/black"
+                        android:textSize="20sp" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/cholesterol"
+                        android:layout_marginTop="25sp"
+                        android:textAlignment="center"
+                        android:textColor="@color/gray"
+                        android:textSize="18sp"
+                        android:paddingStart="15sp"
+                        android:textStyle="bold"
+                        tools:ignore="RtlSymmetry" />
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+
+            <!-- Row 2 -->
+
+            <!-- Column 1 -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/order_blood"
+                android:foreground="?attr/selectableItemBackground"
+                android:clickable="true"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="1"
+                android:layout_marginLeft="6dp"
+                android:layout_marginRight="6dp"
+                android:layout_marginBottom="6dp"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="8dp"
+                android:focusable="true">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal|center_vertical"
+                    android:orientation="vertical"
+                    tools:ignore="UseCompoundDrawables">
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/_12_mmol_l"
+                        android:textAlignment="center"
+                        android:textColor="@android:color/black"
+                        android:textSize="20sp" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/bilir_ubin"
+                        android:layout_marginTop="25sp"
+                        android:textAlignment="center"
+                        android:textColor="@color/gray"
+                        android:textSize="18sp"
+                        android:paddingStart="15sp"
+                        android:textStyle="bold"
+                        tools:ignore="RtlSymmetry" />
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <!-- Column 2 -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/assistant"
+                android:foreground="?attr/selectableItemBackground"
+                android:clickable="true"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="1"
+                android:layout_marginLeft="6dp"
+                android:layout_marginRight="6dp"
+                android:layout_marginBottom="6dp"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="8dp"
+                android:focusable="true">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal|center_vertical"
+
+                    android:orientation="vertical"
+                    tools:ignore="UseCompoundDrawables">
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="3.6 ml/L"
+                        android:textAlignment="center"
+                        android:textColor="@android:color/black"
+                        android:textSize="20sp" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="RBC"
+                        android:layout_marginTop="25sp"
+                        android:textAlignment="center"
+                        android:textColor="@color/gray"
+                        android:textSize="18sp"
+                        android:paddingStart="15sp"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+
+            <!-- Row 2 -->
+
+            <!-- Column 1 -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/report"
+                android:foreground="?attr/selectableItemBackground"
+                android:clickable="true"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="1"
+                android:layout_marginLeft="6dp"
+                android:layout_marginRight="6dp"
+                android:layout_marginBottom="6dp"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="8dp"
+                android:focusable="true">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal|center_vertical"
+
+                    android:orientation="vertical"
+                    tools:ignore="UseCompoundDrawables">
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="102 fl"
+                        android:textAlignment="center"
+                        android:textColor="@android:color/black"
+                        android:textSize="20sp" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="MCV"
+                        android:layout_marginTop="25sp"
+                        android:textAlignment="center"
+                        android:textColor="@color/gray"
+                        android:textSize="18sp"
+                        android:paddingStart="15sp"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <!-- Column 2 -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/campaign"
+                android:foreground="?attr/selectableItemBackground"
+                android:clickable="true"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="1"
+                android:layout_marginLeft="6dp"
+                android:layout_marginRight="6dp"
+                android:layout_marginBottom="6dp"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="8dp"
+                android:focusable="true">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal|center_vertical"
+
+                    android:orientation="vertical"
+                    tools:ignore="UseCompoundDrawables">
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="276 bL"
+                        android:textAlignment="center"
+                        android:textColor="@android:color/black"
+                        android:textSize="20sp" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Platelets"
+                        android:layout_marginTop="25sp"
+                        android:textAlignment="center"
+                        android:textColor="@color/gray"
+                        android:textSize="18sp"
+                        android:paddingStart="15sp"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+
+        </GridLayout>
+
+
+    </LinearLayout>
+
+
+
+
+</RelativeLayout>

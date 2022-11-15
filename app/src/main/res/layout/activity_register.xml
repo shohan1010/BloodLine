@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:fillViewport="true"
+    tools:layout_editor_absoluteX="1dp"
+    tools:layout_editor_absoluteY="1dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        >
+
+        <EditText
+            android:id="@+id/register_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:inputType="text"
+            android:layout_marginTop="70dp"
+            android:drawableStart="@drawable/name_icon_register"
+            android:drawablePadding="5dp"
+            android:ems="12"
+            android:hint="@string/name"
+            android:minHeight="48dp"
+            android:autofillHints="">
+
+        </EditText>
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:inputType="textEmailAddress"
+            android:hint="@string/email"
+            android:layout_below="@id/register_name"
+            android:id="@+id/register_email"
+            android:ems="12"
+            android:layout_centerHorizontal="true"
+            android:drawableStart="@drawable/email_icon_register"
+            android:drawablePadding="5dp"
+            android:autofillHints="">
+
+        </EditText>
+
+        <EditText
+            android:id="@+id/register_password"
+            android:inputType="textPassword"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/register_email"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="24dp"
+            android:ems="12"
+            android:hint="@string/password"
+            android:minHeight="48dp"
+            android:drawableStart="@drawable/pasword_icon_register"
+            android:drawablePadding="5dp"
+            android:autofillHints="">
+
+        </EditText>
+
+        <EditText
+            android:id="@+id/register_phone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/register_password"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="24dp"
+            android:autofillHints=""
+            android:drawableStart="@drawable/phone_icon_register"
+            android:drawablePadding="7dp"
+            android:ems="12"
+            android:hint="@string/phone"
+            android:inputType="phone">
+
+        </EditText>
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:inputType="number"
+            android:hint="@string/age"
+            android:layout_below="@id/asd"
+            android:id="@+id/register_age"
+            android:ems="12"
+            android:layout_centerHorizontal="true"
+            android:drawableStart="@drawable/name_icon_register"
+            android:drawablePadding="7dp"
+            android:autofillHints="">
+
+        </EditText>
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:inputType="text"
+            android:hint="@string/location"
+            android:layout_below="@id/register_age"
+            android:id="@+id/register_location"
+            android:ems="12"
+            android:layout_centerHorizontal="true"
+            android:drawableStart="@drawable/location_icon_register"
+            android:drawablePadding="5dp"
+            android:autofillHints="">
+
+        </EditText>
+
+
+        <Button
+            android:foreground="?attr/selectableItemBackground"
+            android:clickable="true"
+            android:focusable="true"
+            android:id="@+id/request_button_qequest_blood"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/register_location"
+            android:layout_centerHorizontal="true"
+            android:layout_marginStart="70dp"
+            android:layout_marginTop="70dp"
+            android:layout_marginEnd="70dp"
+            android:layout_marginBottom="70dp"
+            android:background="@drawable/custom_button"
+            android:text="@string/register"
+            android:textColor="@color/white">
+
+
+
+        </Button>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/already_have_an_account"
+            android:layout_marginTop="5dp"
+            android:textColor="#7E7E7E"
+            android:textSize="20sp"
+            android:paddingStart="23dp"
+            android:layout_below="@+id/request_button_qequest_blood"
+
+            />
+
+        <TextView
+            android:id="@+id/login_now_register"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/request_button_qequest_blood"
+            android:layout_alignEnd="@+id/request_button_qequest_blood"
+            android:layout_marginTop="5dp"
+            android:text="@string/login"
+            android:textColor="@color/custom"
+            android:textSize="20sp" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/asd"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/register_phone"
+            android:layout_marginTop="24dp"
+            android:paddingStart="80dp"
+            android:hint="@string/select_blood_group"
+            tools:ignore="MissingConstraints,RtlSymmetry">
+
+            <AutoCompleteTextView
+                android:id="@+id/register_blood_group"
+                android:layout_width="270dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/register_age"
+                android:inputType="none"
+                android:textColorHint="#757575"
+                tools:ignore="LabelFor" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+
+
+    </RelativeLayout>
+
+
+
+
+    </ScrollView>

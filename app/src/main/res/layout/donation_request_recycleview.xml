@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="50dp">
+
+        <TextView
+            android:id="@+id/a1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="Name"
+
+            android:textSize="20sp"/>
+        <TextView
+            android:id="@+id/name_donation_request"
+            android:layout_below="@+id/a1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="34sp"
+            android:hint="your name"
+           />
+        <TextView
+            android:id="@+id/a2"
+            android:layout_below="@+id/name_donation_request"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="Location"
+
+            android:textSize="20dp"/>
+        <TextView
+            android:id="@+id/location_donation_request"
+            android:layout_below="@+id/a2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="34sp"
+            android:hint="your location" />
+        <TextView
+            android:id="@+id/time_donation_request"
+            android:layout_below="@+id/location_donation_request"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30sp"
+            android:paddingStart="20dp"
+            android:textSize="20sp"
+            android:text="5 min ago" />
+
+        <TextView
+            android:id="@+id/blood_group_donation_request"
+            android:layout_alignParentRight="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20sp"
+            android:paddingRight="7dp"
+            android:paddingTop="23dp"
+            android:text="O+"
+            android:textSize="50sp" />
+        <TextView
+            android:id="@+id/a3"
+            android:layout_alignParentRight="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/blood_group_donation_request"
+            android:layout_marginTop="20sp"
+            android:paddingTop="23dp"
+            android:text="Donate"
+            android:textColor="#FF2156"
+            android:textSize="30sp" />
+
+
+    </RelativeLayout>
+
+
+
+</androidx.cardview.widget.CardView>

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Login">
+
+
+    <EditText
+        android:id="@+id/login_email"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="@string/enter_email"
+        android:inputType="textEmailAddress"
+        android:layout_marginTop="50dp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/imageView2"
+        android:autofillHints="" />
+
+    <Button
+        android:foreground="?attr/selectableItemBackground"
+        android:clickable="true"
+        android:id="@+id/login_button"
+        android:layout_width="302dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/custom_button"
+        android:text="@string/login"
+        android:textColor="#FFFFFF"
+        android:layout_below="@+id/login_password"
+        android:layout_marginTop="80dp"
+        android:layout_centerHorizontal="true"
+        android:focusable="true" />
+
+    <EditText
+        android:id="@+id/login_password"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="@string/password"
+        android:inputType="textPassword"
+        android:layout_below="@+id/login_email"
+        android:layout_marginTop="50dp"
+        android:layout_centerHorizontal="true"
+        android:autofillHints="" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="250sp"
+        android:layout_height="150sp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="100dp"
+        app:srcCompat="@drawable/logo"
+        android:contentDescription="@string/todo" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textview3"
+        android:textColor="#7E7E7E"
+        android:text="@string/don_t_have_an_account"
+        android:layout_marginTop="127sp"
+        android:textSize="20sp"
+        android:paddingStart="23dp"
+        android:layout_below="@+id/login_button"
+        />
+
+    <TextView
+        android:id="@+id/register_now_login"
+        android:layout_width="194dp"
+        android:layout_height="30dp"
+        android:layout_below="@+id/login_button"
+        android:layout_alignEnd="@+id/login_button"
+        android:layout_marginTop="127sp"
+        android:layout_marginEnd="-90dp"
+        android:text="@string/register_now"
+
+        android:textColor="@color/custom"
+        android:textSize="20sp" />
+</RelativeLayout>

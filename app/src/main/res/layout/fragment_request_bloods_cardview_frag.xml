@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Request_Bloods__cardview_frag">
+
+    <!-- TODO: Update blank fragment layout -->
+
+
+    <EditText
+        android:id="@+id/city_order_blood"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:inputType="text"
+        android:layout_marginTop="70dp"
+        android:drawableStart="@drawable/location_icon_register"
+        android:drawablePadding="5dp"
+        android:ems="12"
+        android:hint="Location"
+        android:minHeight="48dp"
+        android:autofillHints="">
+
+    </EditText>
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:inputType="textEmailAddress"
+        android:hint="Hospital"
+        android:layout_below="@id/city_order_blood"
+        android:id="@+id/Hospital_order_blood"
+        android:ems="12"
+        android:layout_centerHorizontal="true"
+        android:drawableStart="@drawable/hospital"
+        android:drawablePadding="5dp"
+        android:autofillHints="">
+
+    </EditText>
+
+    <Spinner
+        android:id="@+id/blood_type_order_blood"
+        android:layout_width="250dp"
+        android:layout_height="48dp"
+        android:autofillHints="Blood Group"
+        android:layout_below="@id/Hospital_order_blood"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="24dp"
+        android:entries="@array/blood_group"
+        android:spinnerMode="dropdown"
+
+        tools:ignore="HardcodedText" />
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:inputType="phone"
+        android:hint="@string/phone"
+        android:layout_below="@id/blood_type_order_blood"
+        android:id="@+id/mobile_order_blood"
+        android:ems="12"
+        android:layout_centerHorizontal="true"
+        android:drawableStart="@drawable/phone_icon_register"
+        android:drawablePadding="7dp"
+        android:autofillHints="">
+
+    </EditText>
+
+    <EditText
+        android:id="@+id/add_a_note_order_blood"
+        android:layout_width="wrap_content"
+        android:layout_height="112dp"
+        android:layout_below="@id/mobile_order_blood"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="24dp"
+        android:autofillHints=""
+        android:drawableStart="@drawable/note"
+        android:drawablePadding="7dp"
+        android:ems="12"
+        android:hint="Add a Note"
+        android:inputType="text">
+
+    </EditText>
+    <Button
+        android:foreground="?attr/selectableItemBackground"
+        android:clickable="true"
+        android:focusable="true"
+        android:id="@+id/request_button_qequest_blood"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/add_a_note_order_blood"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="70dp"
+        android:layout_marginTop="70dp"
+        android:layout_marginEnd="70dp"
+        android:layout_marginBottom="70dp"
+        android:background="@drawable/custom_button"
+        android:text="Request"
+        android:textColor="@color/white">
+
+
+
+
+    </Button>
+
+
+
+
+
+</RelativeLayout>

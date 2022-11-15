@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Otp">
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="73dp"
+        android:layout_marginTop="31dp"
+        android:layout_marginEnd="73dp"
+        android:layout_marginBottom="52dp"
+        android:contentDescription="@string/contentDescription"
+        app:layout_constraintBottom_toTopOf="@+id/otp_textview"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/otp_icon" />
+
+    <Button
+        android:foreground="?attr/selectableItemBackground"
+        android:clickable="true"
+        android:focusable="true"
+        android:id="@+id/otp_button"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="46dp"
+        android:layout_marginEnd="46dp"
+        android:layout_marginBottom="134dp"
+        android:background="@drawable/custom_button"
+        android:text="@string/verify"
+        android:textColor="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/otp_pinview" />
+
+
+    <com.chaos.view.PinView
+        android:id="@+id/otp_pinview"
+        style="@style/PinWidget.PinView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="148dp"
+        android:cursorVisible="true"
+        android:inputType="number"
+        android:itemBackground="@color/custom1"
+        android:textColor="@color/black"
+        app:itemCount="6"
+        app:itemRadius="5dp"
+        app:layout_constraintBottom_toTopOf="@+id/otp_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/otp_textview"
+        app:lineColor="@color/custom2"
+        tools:ignore="MissingConstraints,SpeakableTextPresentCheck,UnknownId" />
+
+    <TextView
+        android:id="@+id/otp_textview"
+        android:layout_width="201dp"
+        android:layout_height="96dp"
+        android:layout_marginStart="79dp"
+        android:layout_marginEnd="80dp"
+        android:layout_marginBottom="28dp"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/otp_pinview"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/otp_pinview"
+        app:layout_constraintTop_toBottomOf="@+id/imageView3" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
