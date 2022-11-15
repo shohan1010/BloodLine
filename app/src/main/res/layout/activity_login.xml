@@ -63,7 +63,7 @@
         android:textSize="20sp"
         android:paddingStart="23dp"
         android:layout_below="@+id/login_button"
-        />
+        tools:ignore="RtlSymmetry" />
 
     <TextView
         android:id="@+id/register_now_login"
