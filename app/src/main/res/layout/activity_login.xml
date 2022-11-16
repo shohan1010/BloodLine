@@ -6,18 +6,33 @@
     android:layout_height="match_parent"
     tools:context=".Login">
 
-
-    <EditText
-        android:id="@+id/login_email"
-        android:layout_width="wrap_content"
+<!--    Email-->
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/a1"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="400sp"
         android:layout_height="wrap_content"
-        android:ems="10"
-        android:hint="@string/enter_email"
-        android:inputType="textEmailAddress"
+        android:layout_below="@id/imageView2"
         android:layout_marginTop="50dp"
-        android:layout_centerHorizontal="true"
-        android:layout_below="@+id/imageView2"
-        android:autofillHints="" />
+        android:hint="@string/email"
+        android:paddingStart="25sp"
+        app:boxStrokeColor="#2196F3"
+        app:boxStrokeErrorColor="#F40303"
+        app:counterEnabled="true"
+        app:counterMaxLength="30"
+        app:endIconMode="clear_text"
+        app:startIconDrawable="@drawable/profile_icon_navigation"
+        tools:ignore="MissingConstraints,RtlSymmetry">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/login_email"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:inputType="textEmailAddress"
+
+
+            tools:ignore="MissingConstraints" />
+    </com.google.android.material.textfield.TextInputLayout>
 
     <Button
         android:foreground="?attr/selectableItemBackground"
@@ -28,22 +43,42 @@
         android:background="@drawable/custom_button"
         android:text="@string/login"
         android:textColor="#FFFFFF"
-        android:layout_below="@+id/login_password"
+        android:layout_below="@+id/a2"
         android:layout_marginTop="80dp"
         android:layout_centerHorizontal="true"
         android:focusable="true" />
 
-    <EditText
-        android:id="@+id/login_password"
-        android:layout_width="wrap_content"
+<!--    Password-->
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/a2"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="400sp"
         android:layout_height="wrap_content"
-        android:ems="10"
-        android:hint="@string/password"
-        android:inputType="textPassword"
-        android:layout_below="@+id/login_email"
+        android:layout_below="@id/a1"
         android:layout_marginTop="50dp"
-        android:layout_centerHorizontal="true"
-        android:autofillHints="" />
+        android:hint="@string/password"
+        android:paddingStart="25sp"
+        app:boxStrokeColor="#03A9F4"
+        app:boxStrokeErrorColor="#03A9F4"
+        app:counterEnabled="true"
+        app:counterMaxLength="30"
+
+        app:endIconMode="password_toggle"
+        app:startIconDrawable="@drawable/pasword_icon_register"
+        tools:ignore="MissingConstraints,RtlSymmetry">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/login_password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPassword"
+
+
+            tools:ignore="MissingConstraints" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+
 
     <ImageView
         android:id="@+id/imageView2"

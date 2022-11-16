@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
+import android.app.AlertDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
@@ -174,4 +175,7 @@ public class Otp extends AppCompatActivity {
                 Toast.makeText(Otp.this, "Account Registration Failed", Toast.LENGTH_SHORT).show();
         });
     }
+
+
+
 }

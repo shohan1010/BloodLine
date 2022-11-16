@@ -3,6 +3,7 @@ package com.example.bloodline;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
+import android.app.AlertDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -25,7 +26,7 @@ public class Register extends AppCompatActivity {
     AutoCompleteTextView blood_group;
 
     ArrayAdapter<String> adapterItems;
-    String[] items = {"O+","O-","A+","A-"};
+    String[] items = {"O+","A+","B+","AB+","O-","A-","B-","AB-"};
 
 
 
@@ -91,7 +92,6 @@ public class Register extends AppCompatActivity {
             public void onClick(View v)
             {
                 startActivity(new Intent(Register.this,Login.class));
-                finish();
             }
         });
 
@@ -130,13 +130,14 @@ public class Register extends AppCompatActivity {
 
 
         startActivity(intent);
-        finish();
     }
 
 
 });
 
 }
+
+
 
 
 

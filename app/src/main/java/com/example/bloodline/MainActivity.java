@@ -2,6 +2,7 @@ package com.example.bloodline;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.AlertDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -21,13 +22,13 @@ public class MainActivity extends AppCompatActivity {
 
         login1.setOnClickListener(v -> {
             startActivity(new Intent(MainActivity.this,Login.class));
-            finish();
+
 
 
         });
         register1.setOnClickListener(v -> {
             startActivity(new Intent(MainActivity.this,Register.class));
-            finish();
+
 
         });
 
@@ -43,4 +44,20 @@ public class MainActivity extends AppCompatActivity {
             finish();
             }
     }
+
+    @Override
+    public void onBackPressed() {
+
+        new AlertDialog.Builder(MainActivity.this)
+                .setTitle(R.string.app_name)
+                .setIcon(R.drawable.app_logo)
+                .setMessage("          Do you want to exit ?").setCancelable(false)
+                .setPositiveButton("Yes", (dialog, which) -> {
+                    dialog.cancel();
+                    finish();
+                }).setNegativeButton("No",null)
+                .show();
+    }
+
+
 }

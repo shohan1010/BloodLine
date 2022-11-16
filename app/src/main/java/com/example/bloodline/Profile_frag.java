@@ -102,7 +102,7 @@ public class Profile_frag extends Fragment {
             FirebaseAuth.getInstance().signOut();
             Intent intent = new Intent(getActivity(), MainActivity.class);
             startActivity(intent);
-            getActivity().onBackPressed();
+            getActivity().finish();
 
         });
 
@@ -110,5 +110,8 @@ public class Profile_frag extends Fragment {
 
         return view;
     }
+
+
+
 }
 

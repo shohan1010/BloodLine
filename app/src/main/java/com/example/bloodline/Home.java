@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
+import android.app.AlertDialog;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.widget.Toast;
@@ -66,6 +67,21 @@ public class Home extends AppCompatActivity {
         }
         ft.commit();
 
+    }
+
+
+    @Override
+    public void onBackPressed() {
+
+        new AlertDialog.Builder(Home.this)
+                .setTitle(R.string.app_name)
+                .setIcon(R.drawable.app_logo)
+                .setMessage("          Do you want to exit ?").setCancelable(false)
+                .setPositiveButton("Yes", (dialog, which) -> {
+                    dialog.cancel();
+                    finish();
+                }).setNegativeButton("No",null)
+                .show();
     }
 
 
