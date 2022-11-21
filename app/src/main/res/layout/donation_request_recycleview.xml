@@ -24,7 +24,7 @@
             android:hint="your name"
            />
         <TextView
-            android:id="@+id/a2"
+            android:id="@+id/email_textinput"
             android:layout_below="@+id/name_donation_request"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -34,7 +34,7 @@
             android:textSize="20dp"/>
         <TextView
             android:id="@+id/location_donation_request"
-            android:layout_below="@+id/a2"
+            android:layout_below="@+id/email_textinput"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="34sp"
@@ -60,7 +60,7 @@
             android:text="O+"
             android:textSize="50sp" />
         <TextView
-            android:id="@+id/a3"
+            android:id="@+id/password_textinput"
             android:layout_alignParentRight="true"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:fillViewport="true"
-    tools:layout_editor_absoluteX="1dp"
-    tools:layout_editor_absoluteY="1dp">
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    tools:ignore="ScrollViewCount">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -14,100 +13,311 @@
 
         >
 
-        <EditText
-            android:id="@+id/register_name"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+        <ImageView
             android:layout_centerHorizontal="true"
-            android:inputType="text"
-            android:layout_marginTop="70dp"
-            android:drawableStart="@drawable/name_icon_register"
-            android:drawablePadding="5dp"
-            android:ems="12"
+            android:id="@+id/a_img"
+            android:layout_width="227dp"
+            android:layout_height="189dp"
+            android:src="@drawable/blood_logo_icon_front">
+
+
+        </ImageView>
+
+
+
+        <!--        name-->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/a1"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="380dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:layout_below="@+id/a_img"
             android:hint="@string/name"
-            android:minHeight="48dp"
-            android:autofillHints="">
+            android:paddingStart="25sp"
+            app:boxStrokeColor="#2196F3"
+            app:boxStrokeErrorColor="@color/red"
+            app:hintTextColor="#2196F3"
+            app:errorTextColor="@color/red"
 
-        </EditText>
-        <EditText
-            android:layout_width="wrap_content"
+
+            app:counterEnabled="true"
+            app:counterMaxLength="30"
+            app:endIconMode="clear_text"
+            app:startIconTint="@color/custom"
+            app:startIconDrawable="@drawable/profile_icon_navigation"
+            tools:ignore="MissingConstraints,RtlSymmetry">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/register_name"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:inputType="textPersonName"
+
+
+                tools:ignore="MissingConstraints" />
+        </com.google.android.material.textfield.TextInputLayout>
+        <!--        email-->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/email_textinput"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="380dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
-            android:inputType="textEmailAddress"
+            android:layout_below="@id/a1"
+            android:layout_marginTop="18sp"
             android:hint="@string/email"
-            android:layout_below="@id/register_name"
-            android:id="@+id/register_email"
-            android:ems="12"
-            android:layout_centerHorizontal="true"
-            android:drawableStart="@drawable/email_icon_register"
-            android:drawablePadding="5dp"
-            android:autofillHints="">
+            android:paddingStart="25sp"
+            app:boxStrokeColor="#2196F3"
+            app:boxStrokeErrorColor="@color/red"
+            app:counterEnabled="true"
+            app:counterMaxLength="30"
+            app:helperTextEnabled="true"
 
-        </EditText>
 
-        <EditText
-            android:id="@+id/register_password"
-            android:inputType="textPassword"
-            android:layout_width="wrap_content"
+
+            app:endIconMode="clear_text"
+            app:errorTextColor="@color/red"
+            app:hintTextColor="#2196F3"
+            app:startIconTint="@color/custom"
+            app:startIconDrawable="@drawable/email_icon_register"
+            tools:ignore="MissingConstraints,RtlSymmetry,UnknownId">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/register_email"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:inputType="textEmailAddress"
+
+
+                tools:ignore="MissingConstraints" />
+        </com.google.android.material.textfield.TextInputLayout>
+        <!--        password-->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/password_textinput"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="380dp"
             android:layout_height="wrap_content"
-            android:layout_below="@id/register_email"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="24dp"
-            android:ems="12"
+            android:layout_below="@id/email_textinput"
+            android:layout_marginTop="18sp"
             android:hint="@string/password"
-            android:minHeight="48dp"
-            android:drawableStart="@drawable/pasword_icon_register"
-            android:drawablePadding="5dp"
-            android:autofillHints="">
+            android:paddingStart="25sp"
+            app:boxStrokeColor="#2196F3"
+            app:boxStrokeErrorColor="@color/red"
+            app:counterEnabled="true"
+            app:counterMaxLength="20"
+            app:helperText="Enter Minimum 6 Char"
+            app:helperTextEnabled="true"
 
-        </EditText>
 
-        <EditText
-            android:id="@+id/register_phone"
-            android:layout_width="wrap_content"
+
+
+            app:endIconMode="password_toggle"
+            app:errorTextColor="@color/red"
+            app:hintTextColor="#2196F3"
+            app:startIconTint="@color/custom"
+            app:startIconDrawable="@drawable/pasword_icon_register"
+            tools:ignore="MissingConstraints,RtlSymmetry,UnknownId">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/register_password"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:inputType="textPassword"
+                android:maxLength="20"
+
+
+
+                tools:ignore="MissingConstraints" />
+        </com.google.android.material.textfield.TextInputLayout>
+        <!--        again password-->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/confirm_password_textinput"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="380dp"
             android:layout_height="wrap_content"
-            android:layout_below="@id/register_password"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="24dp"
-            android:autofillHints=""
-            android:drawableStart="@drawable/phone_icon_register"
-            android:drawablePadding="7dp"
-            android:ems="12"
+            android:layout_below="@id/password_textinput"
+            android:layout_marginTop="18sp"
+            android:hint="Confirm Password"
+            android:paddingStart="25sp"
+            app:boxStrokeColor="#2196F3"
+            app:boxStrokeErrorColor="@color/red"
+            app:counterEnabled="true"
+            app:counterMaxLength="20"
+            app:helperTextEnabled="true"
+
+
+            app:endIconMode="password_toggle"
+            app:errorTextColor="@color/red"
+            app:hintTextColor="#2196F3"
+            app:startIconTint="@color/custom"
+            app:startIconDrawable="@drawable/pasword_icon_register"
+            tools:ignore="MissingConstraints,RtlSymmetry,UnknownId">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/register_password_again"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:inputType="textPassword"
+                android:maxLength="20"
+
+
+                tools:ignore="MissingConstraints" />
+        </com.google.android.material.textfield.TextInputLayout>
+        <!--        phone-->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/a5"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="380dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/confirm_password_textinput"
+            android:layout_marginTop="18sp"
             android:hint="@string/phone"
-            android:inputType="phone">
+            android:paddingStart="25sp"
+            app:boxStrokeColor="#2196F3"
+            app:boxStrokeErrorColor="@color/red"
+            app:counterEnabled="true"
+            app:counterMaxLength="11"
 
-        </EditText>
-        <EditText
-            android:layout_width="wrap_content"
+
+            app:endIconMode="clear_text"
+            app:errorTextColor="@color/red"
+            app:hintTextColor="#2196F3"
+            app:startIconTint="@color/custom"
+            app:startIconDrawable="@drawable/phone_icon_register"
+            tools:ignore="MissingConstraints,RtlSymmetry,UnknownId">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/register_phone"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:inputType="phone"
+                android:maxLength="11"
+
+
+                tools:ignore="MissingConstraints" />
+        </com.google.android.material.textfield.TextInputLayout>
+        <!--        blood group-->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/a6"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+            android:layout_width="380dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
-            android:inputType="number"
+            android:layout_below="@+id/a5"
+            android:layout_marginTop="18sp"
+            android:hint="Blood Group"
+            android:paddingStart="25sp"
+            app:boxStrokeColor="#2196F3"
+            app:boxStrokeErrorColor="@color/red"
+            app:errorTextColor="@color/red"
+            app:hintTextColor="#2196F3"
+            app:startIconTint="@color/custom"
+            app:startIconDrawable="@drawable/blood_grpup_icon_register"
+            tools:ignore="MissingConstraints,RtlSymmetry">
+
+            <AutoCompleteTextView
+                android:id="@+id/register_blood_group"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/a5"
+                android:inputType="none"
+                android:textColorHint="#757575"
+                tools:ignore="LabelFor" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+        <!--        gender-->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/a7"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+            android:layout_width="380dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/a6"
+            android:layout_marginTop="18sp"
+            android:hint="Gender"
+            android:paddingStart="25sp"
+            app:boxStrokeColor="#2196F3"
+            app:boxStrokeErrorColor="@color/red"
+            app:errorTextColor="@color/red"
+            app:hintTextColor="#2196F3"
+            app:startIconTint="@color/custom"
+            app:startIconDrawable="@drawable/gender"
+
+            tools:ignore="MissingConstraints,RtlSymmetry">
+
+            <AutoCompleteTextView
+                android:id="@+id/register_gender"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/a6"
+                android:inputType="none"
+                android:textColorHint="#757575"
+                tools:ignore="LabelFor" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+        <!--        age-->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/a8"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="380dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/a7"
+            android:layout_marginTop="18sp"
             android:hint="@string/age"
-            android:layout_below="@id/asd"
-            android:id="@+id/register_age"
-            android:ems="12"
-            android:layout_centerHorizontal="true"
-            android:drawableStart="@drawable/name_icon_register"
-            android:drawablePadding="7dp"
-            android:autofillHints="">
+            android:paddingStart="25sp"
+            app:boxStrokeColor="#2196F3"
+            app:boxStrokeErrorColor="@color/red"
+            app:counterEnabled="true"
+            app:counterMaxLength="2"
 
-        </EditText>
-        <EditText
-            android:layout_width="wrap_content"
+
+            app:endIconMode="clear_text"
+            app:errorTextColor="@color/red"
+            app:hintTextColor="#2196F3"
+            app:startIconTint="@color/custom"
+            app:startIconDrawable="@drawable/profile_icon_navigation"
+            tools:ignore="MissingConstraints,RtlSymmetry">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/register_age"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:inputType="phone"
+                android:maxLength="2"
+
+
+                tools:ignore="MissingConstraints" />
+        </com.google.android.material.textfield.TextInputLayout>
+        <!--        location-->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/a9"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="380dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
-            android:inputType="text"
+            android:layout_below="@id/a8"
+            android:layout_marginTop="18sp"
             android:hint="@string/location"
-            android:layout_below="@id/register_age"
-            android:id="@+id/register_location"
-            android:ems="12"
-            android:layout_centerHorizontal="true"
-            android:drawableStart="@drawable/location_icon_register"
-            android:drawablePadding="5dp"
-            android:autofillHints="">
+            android:paddingStart="25sp"
+            app:boxStrokeColor="#2196F3"
+            app:boxStrokeErrorColor="@color/red"
+            app:counterEnabled="true"
+            app:counterMaxLength="30"
 
-        </EditText>
 
+            app:endIconMode="clear_text"
+            app:errorTextColor="@color/red"
+            app:hintTextColor="#2196F3"
+            app:startIconTint="@color/custom"
+            app:startIconDrawable="@drawable/location_icon_register"
+            tools:ignore="MissingConstraints,RtlSymmetry,UnknownId">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/register_location"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:inputType="text"
+
+
+                tools:ignore="MissingConstraints" />
+        </com.google.android.material.textfield.TextInputLayout>
 
         <Button
             android:foreground="?attr/selectableItemBackground"
@@ -116,7 +326,7 @@
             android:id="@+id/request_button_qequest_blood"
             android:layout_width="300dp"
             android:layout_height="wrap_content"
-            android:layout_below="@id/register_location"
+            android:layout_below="@id/a9"
             android:layout_centerHorizontal="true"
             android:layout_marginStart="70dp"
             android:layout_marginTop="70dp"
@@ -126,9 +336,8 @@
             android:text="@string/register"
             android:textColor="@color/white">
 
-
-
         </Button>
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -137,6 +346,8 @@
             android:textColor="#7E7E7E"
             android:textSize="20sp"
             android:paddingStart="23dp"
+            android:layout_marginBottom="20sp"
+
             android:layout_below="@+id/request_button_qequest_blood"
 
             />
@@ -150,36 +361,23 @@
             android:layout_marginTop="5dp"
             android:text="@string/login"
             android:textColor="@color/custom"
+            android:layout_marginBottom="20sp"
             android:textSize="20sp" />
 
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/asd"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/register_phone"
-            android:layout_marginTop="24dp"
-            android:paddingStart="80dp"
-            android:hint="@string/select_blood_group"
-            tools:ignore="MissingConstraints,RtlSymmetry">
 
-            <AutoCompleteTextView
-                android:id="@+id/register_blood_group"
-                android:layout_width="270dp"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/register_age"
-                android:inputType="none"
-                android:textColorHint="#757575"
-                tools:ignore="LabelFor" />
 
-        </com.google.android.material.textfield.TextInputLayout>
+
+
+
+
+
+
+
+
 
 
 
 
     </RelativeLayout>
 
-
-
-
-    </ScrollView>
+</ScrollView>

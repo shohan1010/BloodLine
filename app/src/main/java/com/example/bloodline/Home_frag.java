@@ -1,6 +1,7 @@
 package com.example.bloodline;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -21,6 +22,7 @@ import android.widget.Toast;
 import com.denzcoskun.imageslider.ImageSlider;
 import com.denzcoskun.imageslider.models.SlideModel;
 import com.google.android.material.navigation.NavigationView;
+import com.google.firebase.auth.FirebaseAuth;
 
 
 import java.util.ArrayList;
@@ -140,18 +142,16 @@ public class Home_frag extends Fragment {
                         drawerLayout.closeDrawers();
                         break;
 
-                    case R.id.shareapp:
-                        Toast.makeText(getActivity(), "share-app", Toast.LENGTH_SHORT).show();
-                        drawerLayout.closeDrawers();
-                        break;
-
                     case R.id.Policy:
                         Toast.makeText(getActivity(), "Policy", Toast.LENGTH_SHORT).show();
                         drawerLayout.closeDrawers();
                         break;
-                    case R.id.sin_out:
+                    case R.id.update_information:
                         Toast.makeText(getActivity(), "Sign Out", Toast.LENGTH_SHORT).show();
-                        drawerLayout.closeDrawers();
+                        FirebaseAuth.getInstance().signOut();
+                        Intent intent = new Intent(getActivity(), MainActivity.class);
+                        startActivity(intent);
+                        getActivity().finish();
                         break;
 
 

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -9,37 +9,31 @@
 
     <!-- TODO: Update blank fragment layout -->
 
-    <ImageView
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
+
+    <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/user_info_section"
-        android:layout_width="228dp"
-        android:layout_height="90dp"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
         android:layout_marginStart="20dp"
         android:layout_marginTop="20dp"
         android:layout_marginEnd="20dp"
         android:layout_marginBottom="20dp"
         android:src="@drawable/user_profile"
-        android:contentDescription="@string/todo" />
+        android:contentDescription="@string/todo" >
 
-    <TextView
-        android:id="@+id/user_information_profile"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/user_info_section"
+    </de.hdodenhof.circleimageview.CircleImageView>
 
 
-        android:text="Your information"
-        android:layout_marginStart="65dp"
-
-
-        android:textSize="30sp"
-        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/name_show_profile"
         android:layout_width="300dp"
         android:layout_height="50dp"
-        android:layout_below="@id/user_information_profile"
+        android:layout_below="@id/user_info_section"
         android:layout_marginStart="65dp"
         android:layout_marginTop="30dp"
 
@@ -117,15 +111,16 @@
     <Button
         android:foreground="?attr/selectableItemBackground"
         android:clickable="true"
-        android:id="@+id/sin_out"
+        android:id="@+id/update_information"
         android:layout_width="270dp"
         android:layout_height="wrap_content"
         android:layout_below="@id/location_show_profile"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="50dp"
-        android:text="@string/sign_out"
+        android:text="update information"
         android:background="@drawable/custom_button"
         android:textColor="@color/white"
         android:focusable="true" />
+    </RelativeLayout>
 
-</RelativeLayout>
+</ScrollView>

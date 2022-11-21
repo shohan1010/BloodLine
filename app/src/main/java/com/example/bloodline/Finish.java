@@ -15,7 +15,7 @@ public class Finish extends AppCompatActivity {
         setContentView(R.layout.activity_finish);
         Button button = findViewById(R.id.finish_button);
         button.setOnClickListener(view -> {
-            startActivity(new Intent(Finish.this, Home.class));
+            startActivity(new Intent(Finish.this, MainActivity_2.class));
             finish();
 
         });

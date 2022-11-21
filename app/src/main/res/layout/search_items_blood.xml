@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardElevation="8dp"
+    app:cardCornerRadius="8dp"
+    android:clickable="true"
+    android:foreground="?android:attr/selectableItemBackground"
+    android:layout_margin="10dp"
+    android:focusable="true"
+
+
+    >
+
+    <!-- Age,Blood_Group,Email,Location,Name,Phone-->
+<!--   Name location Blood Group -->
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/name_search_frag"
+            android:layout_width="160sp"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="30sp"
+            android:drawableStart="@drawable/name_icon_register"
+
+
+            android:text="@string/name"
+
+            android:textSize="16sp">
+
+
+        </TextView>
+
+        <TextView
+            android:id="@+id/location_search_frag"
+            android:layout_width="160sp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/name_search_frag"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20sp"
+            android:drawableStart="@drawable/location_icon_register"
+            android:text="@string/location"
+
+            android:textSize="16sp">
+
+
+        </TextView>
+
+
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="150dp"
+            android:src="@drawable/user_profile">
+
+
+        </ImageView>
+
+        <ImageView
+            android:layout_width="75dp"
+            android:layout_height="67dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="30sp"
+            android:layout_marginRight="16dp"
+            android:paddingLeft="30sp"
+            android:src="@drawable/blood_blank">
+
+
+        </ImageView>
+
+        <TextView
+            android:id="@+id/blood_group_search_frag"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="25sp"
+            android:textColor="@color/white"
+
+
+
+            android:layout_alignParentRight="true"
+
+            android:layout_marginTop="50dp"
+            android:paddingRight="19sp"
+            android:text="N/A">
+
+
+        </TextView>
+
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>

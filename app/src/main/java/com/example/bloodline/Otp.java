@@ -27,7 +27,7 @@ import java.util.Objects;
 import java.util.concurrent.TimeUnit;
 
 public class Otp extends AppCompatActivity {
-    String phone,email1,password,age,name,location,blood_group;
+    String phone,email1,password,age,name,location,blood_group,gender;
     String codebySystem;
     PinView pinView;
     TextView textView;
@@ -53,6 +53,7 @@ public class Otp extends AppCompatActivity {
         location = getIntent().getStringExtra("location");//recive location
         name = getIntent().getStringExtra("name");//recive name
         blood_group = getIntent().getStringExtra("blood_group");//recive blood_group
+        gender = getIntent().getStringExtra("gender");//recive gender
 
         auth = FirebaseAuth.getInstance();
         String show_number = "Enter The OTP send to: "+phone;
@@ -123,7 +124,7 @@ public class Otp extends AppCompatActivity {
                 if(task.isSuccessful()){
                     //Toast.makeText(Otp.this, "Verification Successful working as a worker", Toast.LENGTH_SHORT).show();
                     createUseraccount(email1,password);
-                    addinformationdatabase(name,phone,email1,blood_group,location,age);
+                    addinformationdatabase(name,phone,email1,blood_group,gender,location,age);
 
                     Toast.makeText(Otp.this, "Verification Successful", Toast.LENGTH_SHORT).show();
                     startActivity(new Intent(Otp.this,Finish.class));
@@ -136,9 +137,11 @@ public class Otp extends AppCompatActivity {
                         finish();
                     }
                 }
-            }
+            } 
+            //addinformationdatabase
+            //addinformationdatabase
 
-            private void addinformationdatabase(String name, String phone, String email1, String blood_group, String location, String age) {
+            private void addinformationdatabase(String name, String phone, String email1, String blood_group,String gender, String location, String age) {
                     //Adding User information in Database
                 FirebaseFirestore db = FirebaseFirestore.getInstance();
                     HashMap<String, Object> m = new HashMap<>();
@@ -147,6 +150,7 @@ public class Otp extends AppCompatActivity {
                     m.put("Age", age);
                     m.put("Phone", phone);
                     m.put("Blood_Group", blood_group);
+                    m.put("Gender", gender);
                     m.put("Location", location);
                     db.collection("User-ID").document(email1).set(m).addOnCompleteListener(task -> {
                         if(task.isSuccessful()){

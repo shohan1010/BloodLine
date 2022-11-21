@@ -9,11 +9,10 @@ import androidx.fragment.app.FragmentTransaction;
 import android.app.AlertDialog;
 import android.os.Bundle;
 import android.view.MenuItem;
-import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
-public class Home extends AppCompatActivity {
+public class MainActivity_2 extends AppCompatActivity {
     BottomNavigationView bnView;
 
 
@@ -21,7 +20,7 @@ public class Home extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_home);
+        setContentView(R.layout.activity_main_2);
         // id
         bnView =findViewById(R.id.bnView_userProfile);
         //use this to disable index 2 navication item
@@ -73,7 +72,7 @@ public class Home extends AppCompatActivity {
     @Override
     public void onBackPressed() {
 
-        new AlertDialog.Builder(Home.this)
+        new AlertDialog.Builder(MainActivity_2.this)
                 .setTitle(R.string.app_name)
                 .setIcon(R.drawable.app_logo)
                 .setMessage("          Do you want to exit ?").setCancelable(false)

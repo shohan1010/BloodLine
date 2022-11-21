@@ -10,14 +10,18 @@
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/a1"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        android:layout_width="400sp"
+        android:layout_width="380dp"
         android:layout_height="wrap_content"
         android:layout_below="@id/imageView2"
         android:layout_marginTop="50dp"
         android:hint="@string/email"
         android:paddingStart="25sp"
         app:boxStrokeColor="#2196F3"
-        app:boxStrokeErrorColor="#F40303"
+        app:boxStrokeErrorColor="@color/red"
+        app:hintTextColor="#2196F3"
+        app:errorTextColor="@color/red"
+
+
         app:counterEnabled="true"
         app:counterMaxLength="30"
         app:endIconMode="clear_text"
@@ -43,7 +47,7 @@
         android:background="@drawable/custom_button"
         android:text="@string/login"
         android:textColor="#FFFFFF"
-        android:layout_below="@+id/a2"
+        android:layout_below="@+id/email_textinput"
         android:layout_marginTop="80dp"
         android:layout_centerHorizontal="true"
         android:focusable="true" />
@@ -51,9 +55,9 @@
 <!--    Password-->
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/a2"
+        android:id="@+id/email_textinput"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        android:layout_width="400sp"
+        android:layout_width="380dp"
         android:layout_height="wrap_content"
         android:layout_below="@id/a1"
         android:layout_marginTop="50dp"
@@ -62,9 +66,9 @@
         app:boxStrokeColor="#03A9F4"
         app:boxStrokeErrorColor="#03A9F4"
         app:counterEnabled="true"
-        app:counterMaxLength="30"
-
-        app:endIconMode="password_toggle"
+        app:counterMaxLength="16"
+        app:hintTextColor="#03A9F4"
+        app:passwordToggleEnabled="true"
         app:startIconDrawable="@drawable/pasword_icon_register"
         tools:ignore="MissingConstraints,RtlSymmetry">
 
@@ -86,7 +90,7 @@
         android:layout_height="150sp"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="100dp"
-        app:srcCompat="@drawable/logo"
+        app:srcCompat="@drawable/blood_logo_icon_front"
         android:contentDescription="@string/todo" />
     <TextView
         android:layout_width="wrap_content"
