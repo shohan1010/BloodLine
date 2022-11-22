@@ -65,43 +65,37 @@ public class Home_frag extends Fragment {
         find_donor.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Fragment newFragment = new Find_donors_cardview_frag();
-                getfragname(newFragment);
+                startActivity(new Intent(getActivity(),Find_Donor_Cardview.class));
             }
         });
         donates.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Fragment newFragment = new Donates_cardview_frag();
-                getfragname(newFragment);
+                startActivity(new Intent(getActivity(),Donates_cardview.class));
             }
         });
         order_blood.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Fragment newFragment = new Request_Bloods__cardview_frag();
-                getfragname(newFragment);
+                startActivity(new Intent(getActivity(),Request_Blood_Cardview.class));
             }
         });
         assistant.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Fragment newFragment = new Assistant_cardview_frag();
-                getfragname(newFragment);
+                startActivity(new Intent(getActivity(),Assistant_cardview.class));
             }
         });
         report.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Fragment newFragment = new Report_cardview_frag();
-                getfragname(newFragment);
+                startActivity(new Intent(getActivity(),Report_cardview.class));
             }
         });
         campaign.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Fragment newFragment = new Campaign_cardview_frag();
-                getfragname(newFragment);
+                startActivity(new Intent(getActivity(),Campain_cardview.class));
             }
         });
 

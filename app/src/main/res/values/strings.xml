@@ -64,6 +64,8 @@
     <string name="register_now">Register Now</string>
     <string name="already_have_an_account">Already have an account?</string>
     <string name="select_blood_group">Select Blood Group</string>
+    <string name="choose_image">Choose image</string>
+    <string name="update_information">Update Information</string>
     <string-array name="gender">
         <item />
         <item>Male</item>

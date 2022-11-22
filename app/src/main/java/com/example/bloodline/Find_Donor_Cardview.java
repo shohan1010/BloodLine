@@ -1,17 +1,12 @@
 package com.example.bloodline;
 
-import android.annotation.SuppressLint;
-import android.os.Bundle;
-
 import androidx.annotation.Nullable;
-import androidx.fragment.app.Fragment;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.os.Bundle;
 import android.util.Log;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
 
 import com.example.bloodline.recyclerview.MyAdaptar;
 import com.example.bloodline.recyclerview.User;
@@ -24,45 +19,40 @@ import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.ArrayList;
 
-
-public class Find_donors_cardview_frag extends Fragment {
+public class Find_Donor_Cardview extends AppCompatActivity {
     RecyclerView recyclerView;
     MyAdaptar myAdaptar;
     ArrayList<User> userArrayList;
     FirebaseFirestore firestore;
 
 
-
-
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_find_donors_frag, container, false);
-
-        recyclerView = view.findViewById(R.id.recyclerView);
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_find_donor_cardview);
+        recyclerView = findViewById(R.id.recyclerView);
         recyclerView.setHasFixedSize(true);
-        recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
+        recyclerView.setLayoutManager(new LinearLayoutManager(Find_Donor_Cardview.this));
 
 
         firestore = FirebaseFirestore.getInstance();
         userArrayList = new ArrayList<User>();
-        myAdaptar = new MyAdaptar(getActivity(),userArrayList);
+        myAdaptar = new MyAdaptar(getApplicationContext(),userArrayList);
         recyclerView.setAdapter(myAdaptar);
         EventChangeListener();
 
 
-        return view;
+
+
+
     }
 
-    private void EventChangeListener() {
+    private void EventChangeListener(){
 
         firestore.collection("User-ID").orderBy("Age", Query.Direction.ASCENDING)
                 .addSnapshotListener(new EventListener<QuerySnapshot>() {
-                    @SuppressLint("NotifyDataSetChanged")
                     @Override
                     public void onEvent(@Nullable QuerySnapshot value, @Nullable FirebaseFirestoreException error) {
-
                         if (error != null){
                             Log.e("Firestore Error",error.getMessage());
                             return;
@@ -76,18 +66,13 @@ public class Find_donors_cardview_frag extends Fragment {
                             myAdaptar.notifyDataSetChanged();
 
                         }
-
-
                     }
                 });
 
-    }
-
-
-
-
-
-
 
 
     }
+
+
+
+}
