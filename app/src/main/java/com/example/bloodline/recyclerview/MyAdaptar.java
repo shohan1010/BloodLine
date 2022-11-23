@@ -9,9 +9,14 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
+import com.example.bloodline.Profile_frag;
 import com.example.bloodline.R;
+import com.firebase.ui.firestore.FirestoreRecyclerOptions;
 
 import java.util.ArrayList;
+
+import de.hdodenhof.circleimageview.CircleImageView;
 
 public class MyAdaptar extends RecyclerView.Adapter<MyAdaptar.MyViewHolder> {
 
@@ -22,7 +27,6 @@ public class MyAdaptar extends RecyclerView.Adapter<MyAdaptar.MyViewHolder> {
         this.context = context;
         this.userArrayList = userArrayList;
     }
-
 
 
 
@@ -48,7 +52,10 @@ public class MyAdaptar extends RecyclerView.Adapter<MyAdaptar.MyViewHolder> {
         holder.Location.setText(user.Location);
 //        holder.Email.setText(user.Email);
         holder.Name.setText(user.Name);
-//        holder.Phone.setText(user.Phone);
+
+
+        Glide.with(holder.image.getContext()).load(user.getImage()).into(holder.image);
+
 
 
 
@@ -63,6 +70,7 @@ public class MyAdaptar extends RecyclerView.Adapter<MyAdaptar.MyViewHolder> {
 
     public static class MyViewHolder extends RecyclerView.ViewHolder{
         TextView Age,Blood_Group,Email,Location,Name,Phone;
+        CircleImageView image;
 
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -70,7 +78,7 @@ public class MyAdaptar extends RecyclerView.Adapter<MyAdaptar.MyViewHolder> {
 //            Blood_Group = itemView.findViewById(R.id.blood_group);
 //            Email = itemView.findViewById(R.id.email);
 //
-//            Phone = itemView.findViewById(R.id.phone);
+            image = itemView.findViewById(R.id.recyclerView_image_search);
 
             Location = itemView.findViewById(R.id.location_search_frag);
             Name = itemView.findViewById(R.id.name_search_frag);

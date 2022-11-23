@@ -10,6 +10,8 @@ import android.app.AlertDialog;
 import android.os.Bundle;
 import android.view.MenuItem;
 
+import com.example.bloodline.recyclerview.User;
+import com.firebase.ui.firestore.FirestoreRecyclerOptions;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class MainActivity_2 extends AppCompatActivity {
@@ -22,11 +24,13 @@ public class MainActivity_2 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_2);
         // id
-        bnView =findViewById(R.id.bnView_userProfile);
+//        bnView =findViewById(R.id.bnView_userProfile);
         //use this to disable index 2 navication item
         bnView = findViewById(R.id.bnView_userProfile);
         bnView.setBackground(null);
         bnView.getMenu().getItem(2).setEnabled(false);
+
+
 
         bnView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override

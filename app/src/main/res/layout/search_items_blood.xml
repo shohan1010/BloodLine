@@ -17,6 +17,7 @@
 <!--   Name location Blood Group -->
 
     <RelativeLayout
+        android:background="@color/white"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
@@ -52,13 +53,14 @@
         </TextView>
 
 
-        <ImageView
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/recyclerView_image_search"
             android:layout_width="100dp"
             android:layout_height="150dp"
             android:src="@drawable/user_profile">
 
 
-        </ImageView>
+        </de.hdodenhof.circleimageview.CircleImageView>
 
         <ImageView
             android:layout_width="75dp"
@@ -89,6 +91,8 @@
 
 
         </TextView>
+
+
 
 
     </RelativeLayout>

@@ -28,85 +28,84 @@
     </de.hdodenhof.circleimageview.CircleImageView>
 
 
+        <TextView
+            android:id="@+id/name_show_profile"
+            android:layout_width="300dp"
+            android:layout_height="60dp"
+            android:layout_below="@id/user_info_section"
+            android:layout_marginStart="65dp"
+            android:layout_marginTop="30dp"
 
-    <TextView
-        android:id="@+id/name_show_profile"
-        android:layout_width="300dp"
-        android:layout_height="50dp"
-        android:layout_below="@id/user_info_section"
-        android:layout_marginStart="65dp"
-        android:layout_marginTop="30dp"
+            android:drawablePadding="10dp"
+            android:paddingVertical="15dp"
+            android:text=""
+            app:drawableStartCompat="@drawable/name_icon_register" />
 
-        android:drawablePadding="10dp"
-        android:paddingVertical="15dp"
-        android:text=""
-        app:drawableStartCompat="@drawable/name_icon_register" />
+        <TextView
+            android:id="@+id/email_show_profile"
+            android:layout_width="300dp"
+            android:layout_height="60dp"
+            android:layout_below="@id/name_show_profile"
+            android:layout_marginStart="65dp"
+            android:layout_marginTop="20dp"
+            android:drawablePadding="10dp"
+            android:paddingVertical="15dp"
 
-    <TextView
-        android:id="@+id/email_show_profile"
-        android:layout_width="300dp"
-        android:layout_height="50dp"
-        android:layout_below="@id/name_show_profile"
-        android:layout_marginStart="65dp"
-        android:layout_marginTop="20dp"
-        android:paddingVertical="15dp"
-        app:drawableStartCompat="@drawable/email_icon_register"
+            android:text=""
+            app:drawableStartCompat="@drawable/email_icon_register" />
 
-        android:drawablePadding="10dp"
-        android:text="" />
+        <TextView
+            android:id="@+id/phone_show_profile"
+            android:layout_width="300dp"
+            android:layout_height="60dp"
+            android:layout_below="@id/email_show_profile"
+            android:layout_marginStart="65dp"
+            android:layout_marginTop="20dp"
+            android:drawablePadding="10dp"
 
-    <TextView
-        android:id="@+id/phone_show_profile"
-        android:layout_width="300dp"
-        android:layout_height="50dp"
-        android:layout_below="@id/email_show_profile"
-        android:layout_marginStart="65dp"
-        android:layout_marginTop="20dp"
-        app:drawableStartCompat="@drawable/phone_icon_register"
+            android:paddingVertical="15dp"
+            android:text=""
+            app:drawableStartCompat="@drawable/phone_icon_register" />
 
-        android:drawablePadding="10dp"
-        android:paddingVertical="15dp"
-        android:text="" />
+        <TextView
+            android:id="@+id/age_show_profile"
+            android:layout_width="300dp"
+            android:layout_height="60dp"
+            android:layout_below="@id/phone_show_profile"
+            android:layout_marginStart="65dp"
+            android:layout_marginTop="20dp"
+            android:drawablePadding="10dp"
+            android:paddingVertical="17dp"
 
-    <TextView
-        android:id="@+id/age_show_profile"
-        android:layout_marginTop="20dp"
-        android:paddingVertical="17dp"
-        android:layout_width="300dp"
-        android:layout_height="50dp"
-        android:text=""
-        android:layout_below="@id/phone_show_profile"
-        app:drawableStartCompat="@drawable/name_icon_register"
+            android:text=""
+            app:drawableStartCompat="@drawable/name_icon_register"
+            tools:ignore="DuplicateIds" />
 
-        android:drawablePadding="10dp"
-        android:layout_marginStart="65dp"
-        tools:ignore="DuplicateIds" />
-    <TextView
-        android:id="@+id/blood_group_show_profile"
-        android:layout_marginTop="20dp"
-        android:paddingVertical="17dp"
-        android:layout_width="300dp"
-        android:layout_height="50dp"
-        android:text=""
-        android:layout_below="@id/age_show_profile"
-        app:drawableStartCompat="@drawable/name_icon_register"
+        <TextView
+            android:id="@+id/blood_group_show_profile"
+            android:layout_width="300dp"
+            android:layout_height="60dp"
+            android:layout_below="@id/age_show_profile"
+            android:layout_marginStart="65dp"
+            android:layout_marginTop="20dp"
+            android:drawablePadding="10dp"
+            android:paddingVertical="17dp"
 
-        android:drawablePadding="10dp"
-        android:layout_marginStart="65dp"
-        />
-    <TextView
-        android:id="@+id/location_show_profile"
-        android:layout_marginTop="20dp"
-        android:paddingVertical="17dp"
-        android:layout_width="300dp"
-        android:layout_height="50dp"
-        android:text=""
-        android:layout_below="@id/blood_group_show_profile"
-        app:drawableStartCompat="@drawable/location_icon_register"
+            android:text=""
+            app:drawableStartCompat="@drawable/name_icon_register" />
 
-        android:drawablePadding="10dp"
-        android:layout_marginStart="65dp"
-        />
+        <TextView
+            android:id="@+id/location_show_profile"
+            android:layout_width="300dp"
+            android:layout_height="60dp"
+            android:layout_below="@id/blood_group_show_profile"
+            android:layout_marginStart="65dp"
+            android:layout_marginTop="20dp"
+            android:drawablePadding="10dp"
+            android:paddingVertical="17dp"
+
+            android:text=""
+            app:drawableStartCompat="@drawable/location_icon_register" />
 
     <Button
         android:foreground="?attr/selectableItemBackground"

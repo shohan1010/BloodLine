@@ -15,6 +15,7 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.example.bloodline.recyclerview.Test;
+import com.github.dhaval2404.imagepicker.ImagePicker;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
@@ -31,17 +32,18 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
+import de.hdodenhof.circleimageview.CircleImageView;
+
 public class Update_Profile extends AppCompatActivity {
     private static final int PICK_IMAGE_REQUEST = 1;
 
     private Button mButtonChooseImage;
     private Button mButtonUpload;
-    private ImageView mImageView;
+    private CircleImageView mImageView;
 
     private Uri mImageUri;
 
     private StorageReference storageReference;
-    private DatabaseReference databaseReference;
     private FirebaseFirestore firebaseFirestore;
     private FirebaseAuth firebaseAuth;
 
@@ -58,7 +60,6 @@ public class Update_Profile extends AppCompatActivity {
         mImageView = findViewById(R.id.image_view);
 
         storageReference = FirebaseStorage.getInstance().getReference();
-        databaseReference = FirebaseDatabase.getInstance().getReference();
         firebaseFirestore = FirebaseFirestore.getInstance();
         firebaseAuth = FirebaseAuth.getInstance();
 
@@ -82,12 +83,6 @@ public class Update_Profile extends AppCompatActivity {
             public void onClick(View v) {
                 if (mImageUri == null){
                     Toast.makeText(Update_Profile.this, "Please Pick an Image", Toast.LENGTH_SHORT).show();
-//                    //
-//                    firebaseFirestore.collection("User_profile_pic")
-//                            .document(logEmail).update("uid","2wd");
-//                    //
-
-
 
                 }
                 else {
@@ -157,7 +152,7 @@ public class Update_Profile extends AppCompatActivity {
                     @Override
                     public void onSuccess(Uri uri) {
                         ImageUriAcessToken=uri.toString();
-                        Toast.makeText(getApplicationContext(),"URI get sucess",Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(),"URI get success",Toast.LENGTH_SHORT).show();
                         sendDataTocloudFirestore();
                     }
                 }).addOnFailureListener(new OnFailureListener() {
@@ -174,7 +169,7 @@ public class Update_Profile extends AppCompatActivity {
         }).addOnFailureListener(new OnFailureListener() {
             @Override
             public void onFailure(@NonNull Exception e) {
-                Toast.makeText(getApplicationContext(),"Image Not UPdloaded",Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(),"Image Not Uploaded",Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -201,10 +196,17 @@ public class Update_Profile extends AppCompatActivity {
 
     private void openFileChooser() {
         // open gallery
-        Intent intent = new Intent();
-        intent.setType("image/*");
-        intent.setAction(Intent.ACTION_GET_CONTENT);
-        startActivityForResult(intent, PICK_IMAGE_REQUEST);
+//        Intent intent = new Intent();
+//        intent.setType("image/*");
+//        intent.setAction(Intent.ACTION_GET_CONTENT);
+//        startActivityForResult(intent, PICK_IMAGE_REQUEST);
+        //
+        ImagePicker.with(this)
+                .crop()	    			//Crop image(Optional), Check Customization for more option
+                .compress(1024)			//Final image size will be less than 1 MB(Optional)
+                .maxResultSize(1080, 1080)	//Final image resolution will be less than 1080 x 1080(Optional)
+                .start(PICK_IMAGE_REQUEST);
+                //
     }
 
     @Override

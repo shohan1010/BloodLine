@@ -160,7 +160,6 @@ public class Home_frag extends Fragment {
 
         // ------------------------
         // App Bar Click Event
-        imageMenu = view.findViewById(R.id.imageMenu);
 
         imageMenu.setOnClickListener(new View.OnClickListener() {
             @Override
