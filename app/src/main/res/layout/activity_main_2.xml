@@ -7,13 +7,15 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+
     <FrameLayout
         android:id="@+id/container"
         android:layout_width="match_parent"
-        android:layout_height="750dp"
+        android:layout_height="700dp"
         android:layout_marginBottom="?attr/actionBarSize">
 
     </FrameLayout>
+
 
     <com.google.android.material.bottomappbar.BottomAppBar
         android:id="@+id/bottom_app_bar"
@@ -22,8 +24,8 @@
         android:layout_height="wrap_content"
         android:layout_gravity="bottom"
         android:backgroundTint="@color/transparent"
-        android:background="@color/transparent"
-        app:backgroundTint="@color/transparent"
+        android:background="@color/white"
+        app:backgroundTint="@color/white"
         app:fabCradleMargin="10dp"
         app:fabCradleRoundedCornerRadius="40dp">
 
@@ -33,7 +35,7 @@
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
             android:layout_marginEnd="16dp"
-            android:background="@color/transparent"
+            android:background="@color/custom1"
             app:itemTextColor="@color/black"
             app:menu="@menu/nav_bar"
 
@@ -51,5 +53,6 @@
         app:tint="@color/white"
         app:layout_anchor="@id/bottom_app_bar"
         android:contentDescription="@string/todo" />
+
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

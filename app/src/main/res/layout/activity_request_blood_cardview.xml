@@ -38,7 +38,7 @@
             tools:ignore="MissingConstraints,RtlSymmetry">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/city_order_blood"
+                android:id="@+id/location_request_blood"
                 android:layout_width="match_parent"
                 android:layout_height="55dp"
                 android:inputType="textEmailAddress"
@@ -70,7 +70,7 @@
             tools:ignore="MissingConstraints,RtlSymmetry,UnknownId">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/Hospital_order_blood"
+                android:id="@+id/hospital_request_blood"
                 android:layout_width="match_parent"
                 android:layout_height="55dp"
                 android:inputType="textEmailAddress"
@@ -131,7 +131,7 @@
             tools:ignore="MissingConstraints,RtlSymmetry">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/mobile_order_blood"
+                android:id="@+id/phone_request_blood"
                 android:layout_width="match_parent"
                 android:layout_height="55dp"
                 android:inputType="textEmailAddress"
@@ -147,7 +147,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/a8"
             android:layout_marginTop="18dp"
-            android:hint="@string/location"
+            android:hint="@string/note"
             android:paddingStart="25sp"
             app:boxStrokeColor="#2196F3"
             app:boxStrokeErrorColor="@color/red"
@@ -163,7 +163,7 @@
             tools:ignore="MissingConstraints,RtlSymmetry,UnknownId">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/add_a_note_order_blood"
+                android:id="@+id/add_a_note_request_blood"
                 android:layout_width="match_parent"
                 android:layout_height="55dp"
                 android:inputType="textEmailAddress"
