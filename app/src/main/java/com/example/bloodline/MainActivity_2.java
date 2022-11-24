@@ -10,8 +10,6 @@ import android.app.AlertDialog;
 import android.os.Bundle;
 import android.view.MenuItem;
 
-import com.example.bloodline.recyclerview.User;
-import com.firebase.ui.firestore.FirestoreRecyclerOptions;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class MainActivity_2 extends AppCompatActivity {

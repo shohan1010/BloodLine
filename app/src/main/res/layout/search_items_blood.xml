@@ -26,7 +26,7 @@
             android:layout_width="160sp"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="30sp"
+            android:layout_marginTop="20sp"
             android:drawableStart="@drawable/name_icon_register"
 
 
@@ -46,6 +46,20 @@
             android:layout_marginTop="20sp"
             android:drawableStart="@drawable/location_icon_register"
             android:text="@string/location"
+
+            android:textSize="16sp">
+
+
+        </TextView>
+        <TextView
+            android:id="@+id/phone_search_frag"
+            android:layout_width="160sp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/location_search_frag"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20sp"
+            android:drawableStart="@drawable/location_icon_register"
+            android:text="@string/phone"
 
             android:textSize="16sp">
 

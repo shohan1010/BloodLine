@@ -21,8 +21,13 @@ import android.widget.Toast;
 
 import com.denzcoskun.imageslider.ImageSlider;
 import com.denzcoskun.imageslider.models.SlideModel;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FirebaseFirestore;
 
 
 import java.util.ArrayList;
@@ -33,6 +38,12 @@ public class Home_frag extends Fragment {
     NavigationView navigationView;
     ActionBarDrawerToggle toggle;
     ImageView imageMenu;
+    FirebaseAuth auth;
+    FirebaseFirestore firebaseFirestore;
+    FirebaseDatabase firebaseDatabase;
+    String login_email_id;
+    String firestore_Age;
+
 
     @SuppressLint("MissingInflatedId")
     @Override
@@ -40,6 +51,17 @@ public class Home_frag extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_home_frag, container, false);
+
+        auth = FirebaseAuth.getInstance();
+        firebaseFirestore = FirebaseFirestore.getInstance();
+        firebaseDatabase = FirebaseDatabase.getInstance();
+        login_email_id =auth.getCurrentUser().getEmail();
+
+//        getfirestoredata();
+//        Toast.makeText(getActivity(), firestore_Age, Toast.LENGTH_SHORT).show();
+
+
+
         ImageSlider imageSlider;
         imageSlider = view.findViewById(R.id.image_slider);
         drawerLayout = view.findViewById(R.id.drawer_layout);
@@ -181,6 +203,23 @@ public class Home_frag extends Fragment {
         transaction.replace(R.id.container,name);
         transaction.addToBackStack(null);
         transaction.commit();
+    }
+
+    public void getfirestoredata(){
+        DocumentReference documentReference = firebaseFirestore.collection("User-ID").document(login_email_id);
+        documentReference.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+            @Override
+            public void onSuccess(DocumentSnapshot documentSnapshot) {
+
+                firestore_Age= documentSnapshot.getString("Age");
+
+            }
+        });
+
+
+
+
+
     }
 
 

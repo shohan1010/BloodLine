@@ -23,6 +23,8 @@ import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.storage.FileDownloadTask;
@@ -39,6 +41,8 @@ public class Profile_frag extends Fragment {
     FirebaseAuth auth;
     FirebaseFirestore firestore;
     FirebaseStorage firebaseStorage;
+    FirebaseDatabase firebaseDatabase;
+    DatabaseReference databaseReference;
     String logEmail;
     Button update_information1;
     private ProgressDialog progressDialog;
@@ -75,12 +79,19 @@ public class Profile_frag extends Fragment {
 
 
         auth= FirebaseAuth.getInstance();
+        firebaseDatabase = FirebaseDatabase.getInstance();
+        databaseReference = firebaseDatabase.getReference().child("User-ID");
+
         if(auth.getCurrentUser()!=null){
             logEmail=auth.getCurrentUser().getEmail();
         }
         else{
             Toast.makeText(getActivity(), "No users found", Toast.LENGTH_SHORT).show();
         }
+
+
+
+
         //progressdilog_progress();
         progressDialog = new ProgressDialog(getActivity());
         progressDialog.setCancelable(false);
@@ -149,6 +160,8 @@ public class Profile_frag extends Fragment {
 
 
         update_information1.setOnClickListener(v -> {
+//            // firestore_to_realtime
+//            firestore_to_realtime();
 
 
             Intent intent = new Intent(getActivity(), Update_Profile.class);
@@ -191,6 +204,12 @@ public class Profile_frag extends Fragment {
             e.printStackTrace();
         }
 //////////////
+    }
+
+    private void firestore_to_realtime(){
+        String a = s_name.trim();
+        databaseReference.child(logEmail).setValue(a);
+//        Toast.makeText(getActivity(), a, Toast.LENGTH_SHORT).show();
     }
 
 

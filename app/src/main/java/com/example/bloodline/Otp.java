@@ -20,6 +20,8 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException;
 import com.google.firebase.auth.PhoneAuthCredential;
 import com.google.firebase.auth.PhoneAuthProvider;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.HashMap;
@@ -144,7 +146,9 @@ public class Otp extends AppCompatActivity {
             private void addinformationdatabase(String name, String phone, String email1, String blood_group,String gender, String location, String age) {
                     //Adding User information in Database
                 FirebaseFirestore db = FirebaseFirestore.getInstance();
-                    HashMap<String, Object> m = new HashMap<>();
+//                FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
+//                DatabaseReference databaseReference = firebaseDatabase.getReference();
+                    HashMap<String, String> m = new HashMap<>();
                     m.put("Name", name);
                     m.put("Email", email1);
                     m.put("Age", age);
@@ -163,6 +167,17 @@ public class Otp extends AppCompatActivity {
 
 
                     });
+//                databaseReference.child("User-ID").child(email1).setValue(m).addOnCompleteListener(new OnCompleteListener<Void>() {
+//                    @Override
+//                    public void onComplete(@NonNull Task<Void> task) {
+//                        if(task.isSuccessful()){
+//                            Toast.makeText(Otp.this, "Data Added Successfully", Toast.LENGTH_SHORT).show();
+//                        }
+//                        else{
+//                            Toast.makeText(Otp.this, "Data add failed!!", Toast.LENGTH_SHORT).show();
+//                        }
+//                    }
+//                });
 
 
 
