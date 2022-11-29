@@ -1,15 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Search_frag">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/search"
-        android:textSize="96sp" />
 
-</FrameLayout>
+
+    <SearchView
+        android:id="@+id/search_id_search_frag"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:drawableStart="@drawable/search_icon_navigation"
+        android:hint="@string/search"
+        android:inputType="textPersonName"
+        tools:ignore="MissingConstraints" />
+
+
+
+
+    <Button
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="600dp"
+        android:id="@+id/apply_search_frag"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/apply"
+        tools:ignore="MissingConstraints"
+         />
+
+
+</RelativeLayout>

@@ -1,13 +1,13 @@
-package com.example.bloodline.recyclerview;
+package com.example.bloodline.Search;
 
-public class User {
+public class User_Search {
     String Age,Blood_Group,Email,Location,Name,Phone,Image;
     String image_url;
 
-    public User() {
+    public User_Search() {
     }
 
-    public User(String age, String blood_Group, String email, String location, String name, String phone, String image, String image_url) {
+    public User_Search(String age, String blood_Group, String email, String location, String name, String phone, String image, String image_url) {
         Age = age;
         Blood_Group = blood_Group;
         Email = email;
@@ -18,7 +18,7 @@ public class User {
         this.image_url = image_url;
     }
 
-    public User(String uid) {
+    public User_Search(String uid) {
     }
 
     public String getAge() {

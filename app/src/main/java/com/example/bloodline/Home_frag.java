@@ -21,7 +21,9 @@ import android.widget.Toast;
 
 import com.denzcoskun.imageslider.ImageSlider;
 import com.denzcoskun.imageslider.models.SlideModel;
+import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.FirebaseDatabase;
@@ -59,6 +61,31 @@ public class Home_frag extends Fragment {
 
 //        getfirestoredata();
 //        Toast.makeText(getActivity(), firestore_Age, Toast.LENGTH_SHORT).show();
+
+        /// drawer information
+//        firebaseFirestore.collection("User-ID").document(login_email_id).get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+//            @Override
+//            public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+//                DocumentSnapshot documentSnapshot = task.getResult();
+//                if(documentSnapshot!=null && documentSnapshot.exists()){
+//                    s_name=documentSnapshot.getString("Name");
+//                    s_email=documentSnapshot.getString("Email");
+//                    s_phone=documentSnapshot.getString("Phone");
+//                    s_age=documentSnapshot.getString("Age");
+//                    s_blood_group=documentSnapshot.getString("Blood_Group");
+//                    s_location=documentSnapshot.getString("Location");
+//
+//                    name.setText("Name : "+s_name);
+//                    location.setText("Location : "+s_location);
+//
+//
+//                }
+//            }
+//        });
+
+
+
+        /////
 
 
 
@@ -117,7 +144,7 @@ public class Home_frag extends Fragment {
         campaign.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getActivity(),Campain_cardview.class));
+                startActivity(new Intent(getActivity(), Ambulance_cardview.class));
             }
         });
 

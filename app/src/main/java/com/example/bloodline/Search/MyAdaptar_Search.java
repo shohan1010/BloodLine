@@ -1,4 +1,4 @@
-package com.example.bloodline.recyclerview;
+package com.example.bloodline.Search;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -15,14 +15,14 @@ import com.firebase.ui.firestore.FirestoreRecyclerOptions;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
-public class MyAdaptar extends FirestoreRecyclerAdapter<User, MyAdaptar.NoteHolder> {
+public class MyAdaptar_Search extends FirestoreRecyclerAdapter<User_Search, MyAdaptar_Search.NoteHolder> {
 
-    public MyAdaptar(@NonNull FirestoreRecyclerOptions<User> options) {
+    public MyAdaptar_Search(@NonNull FirestoreRecyclerOptions<User_Search> options) {
         super(options);
     }
 
     @Override
-    protected void onBindViewHolder(@NonNull NoteHolder holder, int position, @NonNull User model) {
+    protected void onBindViewHolder(@NonNull NoteHolder holder, int position, @NonNull User_Search model) {
         holder.Name.setText(model.getName());
         holder.Location.setText(model.getLocation());
         holder.Blood_Group.setText(model.getBlood_Group());

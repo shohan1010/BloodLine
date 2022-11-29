@@ -65,25 +65,26 @@ public class MainActivity_2 extends AppCompatActivity {
         }
         else{
             ft.replace(R.id.container,fragment);
+
         }
         ft.commit();
 
     }
 
 
-    @Override
-    public void onBackPressed() {
-
-        new AlertDialog.Builder(MainActivity_2.this)
-                .setTitle(R.string.app_name)
-                .setIcon(R.drawable.app_logo)
-                .setMessage("          Do you want to exit ?").setCancelable(false)
-                .setPositiveButton("Yes", (dialog, which) -> {
-                    dialog.cancel();
-                    finish();
-                }).setNegativeButton("No",null)
-                .show();
-    }
+//    @Override
+//    public void onBackPressed() {
+//
+//        new AlertDialog.Builder(MainActivity_2.this)
+//                .setTitle(R.string.app_name)
+//                .setIcon(R.drawable.app_logo)
+//                .setMessage("          Do you want to exit ?").setCancelable(false)
+//                .setPositiveButton("Yes", (dialog, which) -> {
+//                    dialog.cancel();
+//                    finish();
+//                }).setNegativeButton("No",null)
+//                .show();
+//    }
 
 
 }

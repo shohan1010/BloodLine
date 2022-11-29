@@ -58,7 +58,7 @@
     <string name="_6_2_mmol_l">6.2 mmol/L</string>
     <string name="cholesterol">Cholesterol</string>
     <string name="_12_mmol_l">12 mmol/L</string>
-    <string name="bilir_ubin">Bilir ubin</string>
+    <string name="bilir_ubin">Bilir Ubin</string>
     <string name="enter_email">Enter Email</string>
     <string name="don_t_have_an_account">Don’t have an account?</string>
     <string name="register_now">Register Now</string>
@@ -67,6 +67,19 @@
     <string name="choose_image">Choose image</string>
     <string name="update_information">Update Information</string>
     <string name="note">Note</string>
+    <string name="patient_name">patient name</string>
+    <string name="ambulance">Ambulance</string>
+    <string name="apply">Apply</string>
+    <string name="md_sabbir_roshid_shohan">Md Sabbir Roshid Shohan</string>
+    <string name="rajshahi">Rajshahi</string>
+    <string name="rbc">RBC</string>
+    <string name="mcv">MCV</string>
+    <string name="platelets">Platelets</string>
+    <string name="ambulance_name">Ambulance Name</string>
+    <string name="n_a">N/A</string>
+    <string name="donate">Donate</string>
+    <string name="hospital">Hospital</string>
+    <string name="blood_group">Blood Group</string>
     <string-array name="gender">
         <item />
         <item>Male</item>

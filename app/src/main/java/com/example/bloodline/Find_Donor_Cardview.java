@@ -9,18 +9,20 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.SearchView;
 
-import com.example.bloodline.recyclerview.User;
-import com.example.bloodline.recyclerview.MyAdaptar;
+import com.example.bloodline.Search.User_Search;
+import com.example.bloodline.Search.MyAdaptar_Search;
 import com.firebase.ui.firestore.FirestoreRecyclerOptions;
 import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.Query;
 
+import java.util.Locale;
+
 public class Find_Donor_Cardview extends AppCompatActivity {
     private FirebaseFirestore db = FirebaseFirestore.getInstance();
     private CollectionReference notebookRef = db.collection("User-ID");
 
-    private MyAdaptar adapter;
+    private MyAdaptar_Search adapter;
     RecyclerView recyclerView;
 
     @Override
@@ -34,11 +36,11 @@ public class Find_Donor_Cardview extends AppCompatActivity {
     private void setUpRecyclerView() {
         Query query = notebookRef.orderBy("Age", Query.Direction.DESCENDING);
 
-        FirestoreRecyclerOptions<User> options = new FirestoreRecyclerOptions.Builder<User>()
-                .setQuery(query, User.class)
+        FirestoreRecyclerOptions<User_Search> options = new FirestoreRecyclerOptions.Builder<User_Search>()
+                .setQuery(query, User_Search.class)
                 .build();
 
-        adapter = new MyAdaptar(options);
+        adapter = new MyAdaptar_Search(options);
 
         recyclerView = findViewById(R.id.recyclerView_view);
         recyclerView.setHasFixedSize(true);
@@ -60,40 +62,40 @@ public class Find_Donor_Cardview extends AppCompatActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.serach_bar,menu);
+        getMenuInflater().inflate(R.menu.serach_bar, menu);
         MenuItem item = menu.findItem(R.id.app_bar_search);
         SearchView searchView = (SearchView) item.getActionView();
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
             public boolean onQueryTextSubmit(String s) {
-                process_search(s);
+                // convert to upercase
+                process_search(s.toUpperCase(Locale.ROOT));
                 return false;
             }
 
             @Override
             public boolean onQueryTextChange(String s) {
-                process_search(s);
+                // convert to upercase
+                process_search(s.toUpperCase(Locale.ROOT));
                 return false;
             }
         });
-
 
 
         return super.onCreateOptionsMenu(menu);
     }
 
     private void process_search(String s) {
-        Query query = notebookRef.orderBy("Blood_Group").startAt(s).endAt(s+"\uf8ff");
+        Query query = notebookRef.orderBy("Blood_Group").startAt(s).endAt(s + "\uf8ff");
 
-        FirestoreRecyclerOptions<User> options = new FirestoreRecyclerOptions.Builder<User>()
-                .setQuery(query, User.class)
+        FirestoreRecyclerOptions<User_Search> options = new FirestoreRecyclerOptions.Builder<User_Search>()
+                .setQuery(query, User_Search.class)
                 .build();
-        adapter = new MyAdaptar(options);
+        adapter = new MyAdaptar_Search(options);
         adapter.startListening();
         recyclerView.setAdapter(adapter);
 
 
-
-
     }
+
 }

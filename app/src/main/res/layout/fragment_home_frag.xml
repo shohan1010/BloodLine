@@ -25,7 +25,7 @@
             android:src="@drawable/menu_home_frag"
             tools:ignore="RtlSymmetry"
             android:focusable="true"
-            android:contentDescription="TODO" />
+            android:contentDescription="@string/todo" />
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -310,13 +310,14 @@
                         android:layout_width="40dp"
                         android:layout_height="40dp"
                         android:layout_gravity="center_horizontal"
-                        android:src="@drawable/campaign_icon_cartview"
-                        android:contentDescription="@string/todo" />
+                        android:src="@drawable/ambulance_icon"
+                        android:contentDescription="@string/todo"
+                        app:tint="@color/custom" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/campaign"
+                        android:text="@string/ambulance"
                         android:textAlignment="center"
                         android:textColor="#7E7E7E"
                         android:textSize="16sp"

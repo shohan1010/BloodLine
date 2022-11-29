@@ -21,14 +21,14 @@ import java.util.HashMap;
 
 public class Request_Blood_Cardview extends AppCompatActivity {
     Button button;
-    EditText location_edit,hospital_edit,phone_edit,note_edit;
+    EditText name_edit,location_edit,hospital_edit,phone_edit,note_edit;
     ArrayAdapter<String> arrayadaptar_blood;
     String[] items_blood = {"O+","A+","B+","AB+","O-","A-","B-","AB-"};
     AutoCompleteTextView blood_group_get;
     Dialog dialog;
     String logEmail;
     FirebaseAuth auth;
-    String hospital,phone,blood_group,location,note;
+    String hospital,phone,blood_group,location,note,name;
 
     @SuppressLint("MissingInflatedId")
     @Override
@@ -45,6 +45,7 @@ public class Request_Blood_Cardview extends AppCompatActivity {
         location_edit = findViewById(R.id.location_request_blood);
         phone_edit = findViewById(R.id.phone_request_blood);
         note_edit = findViewById(R.id.add_a_note_request_blood);
+        name_edit = findViewById(R.id.patient_request_blood);
 
 
 
@@ -69,7 +70,8 @@ public class Request_Blood_Cardview extends AppCompatActivity {
                 location = location_edit.getText().toString();
                 phone = phone_edit.getText().toString();
                 note = note_edit.getText().toString();
-                addinformationdatabase(hospital,phone,blood_group,location,note);
+                name = name_edit.getText().toString();
+                addinformationdatabase(hospital,phone,blood_group,location,note,name);
                 Toast.makeText(Request_Blood_Cardview.this, "Blood Request is done.", Toast.LENGTH_SHORT).show();
                 startActivity(new Intent(Request_Blood_Cardview.this,Request_Finish.class));
                 finish();
@@ -83,7 +85,7 @@ public class Request_Blood_Cardview extends AppCompatActivity {
 
     }
 
-    private void addinformationdatabase(String hospital, String phone,  String blood_group, String location, String note) {
+    private void addinformationdatabase(String hospital, String phone,  String blood_group, String location, String note,String name) {
         //Adding User information in Database
         FirebaseFirestore db = FirebaseFirestore.getInstance();
 
@@ -96,7 +98,8 @@ public class Request_Blood_Cardview extends AppCompatActivity {
         m.put("Blood_Group", blood_group);
         m.put("Phone", phone);
         m.put("Note", note);
-        db.collection("Request_Blood").document(logEmail).set(m).addOnCompleteListener(task -> {
+        m.put("Name", name);
+        db.collection("Blood").document(logEmail).set(m).addOnCompleteListener(task -> {
             if(task.isSuccessful()){
                 Toast.makeText(Request_Blood_Cardview.this, "Data Added Successfully", Toast.LENGTH_SHORT).show();
             }

@@ -9,7 +9,8 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:textSize="56sp"
-        android:text="Chat" />
+        android:layout_marginTop="80dp"
+        android:textSize="67sp"
+        android:text="Chat Upcoming in Progerss" />
 
 </FrameLayout>

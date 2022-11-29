@@ -312,8 +312,8 @@
                         <option name="values">
                           <map>
                             <entry key="assetSourceType" value="FILE" />
-                            <entry key="outputName" value="gender" />
-                            <entry key="sourceFile" value="F:\VU\Project\App\Blood Line\Files\Icon\SVG\gender.svg" />
+                            <entry key="outputName" value="ambulance_icon_for_text" />
+                            <entry key="sourceFile" value="F:\VU\Project\App\Blood Line\Files\Icon\SVG\ambulance_icon_for_text.svg" />
                           </map>
                         </option>
                       </PersistentState>
