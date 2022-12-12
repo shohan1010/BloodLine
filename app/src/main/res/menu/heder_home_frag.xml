@@ -49,7 +49,7 @@
                     android:icon="@drawable/privacy_policy"
                     android:title="Policy" />
                 <item
-                    android:id="@+id/update_information"
+                    android:id="@+id/sign_out"
                     android:icon="@drawable/sin_out_icon"
                     android:title="Sign Out" />
             </menu>

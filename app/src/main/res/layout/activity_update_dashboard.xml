@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Update_Dashboard">
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/a11"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="380dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:hint="Total Times Donated"
+        android:paddingStart="25sp"
+        app:boxStrokeColor="#2196F3"
+        app:boxStrokeErrorColor="@color/red"
+        app:hintTextColor="#2196F3"
+        app:errorTextColor="@color/red"
+
+
+
+        app:endIconMode="clear_text"
+        app:startIconTint="@color/custom"
+        app:startIconDrawable="@drawable/profile_icon_navigation"
+        tools:ignore="MissingConstraints,RtlSymmetry">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/times_donated_dashboard_update"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:inputType="number"
+
+
+            tools:ignore="MissingConstraints" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <CalendarView
+        android:id="@+id/calender_dashboard_update"
+        android:layout_marginTop="100dp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/a11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:ignore="NotSibling">
+
+
+
+
+    </CalendarView>
+    <Button
+        android:id="@+id/update_dashboard"
+        android:layout_below="@id/calender_dashboard_update"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="100dp"
+        android:text="Update Information"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        >
+
+
+
+    </Button>
+
+
+
+
+
+</RelativeLayout>

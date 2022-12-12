@@ -14,10 +14,11 @@
         >
 
         <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/drawar_image"
             android:layout_marginStart="10dp"
             android:layout_width="100dp"
             android:layout_height="100dp"
-            android:src="@drawable/my_pic"
+            android:src="@drawable/user_profile"
             />
 
         <LinearLayout
@@ -26,21 +27,22 @@
             android:layout_height="wrap_content"
             android:orientation="vertical"
             >
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textColor="?attr/colorPrimary"
-                android:textStyle="bold"
-                android:text="@string/md_sabbir_roshid_shohan"
-                android:layout_marginStart="10dp"
-                android:textSize="20sp"
-                />
 
             <TextView
+                android:id="@+id/drawer_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textColor="#AE000000"
-                android:text="@string/rajshahi"
+                android:layout_marginStart="10dp"
+                android:text="Your Name"
+                android:textColor="?attr/colorPrimary"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/drawer_locaion"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Your Location"
                 android:layout_marginStart="10dp"
                 android:textSize="18sp"
                 />

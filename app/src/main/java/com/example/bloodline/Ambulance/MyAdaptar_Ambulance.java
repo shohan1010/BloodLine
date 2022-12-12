@@ -12,6 +12,8 @@ import com.example.bloodline.R;
 import com.firebase.ui.firestore.FirestoreRecyclerAdapter;
 import com.firebase.ui.firestore.FirestoreRecyclerOptions;
 
+import java.util.Locale;
+
 import de.hdodenhof.circleimageview.CircleImageView;
 
 public class MyAdaptar_Ambulance extends FirestoreRecyclerAdapter<User_Ambulance, MyAdaptar_Ambulance.NoteHolder> {

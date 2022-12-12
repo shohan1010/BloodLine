@@ -2,6 +2,8 @@ package com.example.bloodline;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -17,22 +19,31 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
+import com.bumptech.glide.Glide;
 import com.denzcoskun.imageslider.ImageSlider;
 import com.denzcoskun.imageslider.models.SlideModel;
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.storage.FileDownloadTask;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
 
 
+import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
+
+import de.hdodenhof.circleimageview.CircleImageView;
 
 
 public class Home_frag extends Fragment {
@@ -42,9 +53,10 @@ public class Home_frag extends Fragment {
     ImageView imageMenu;
     FirebaseAuth auth;
     FirebaseFirestore firebaseFirestore;
-    FirebaseDatabase firebaseDatabase;
     String login_email_id;
-    String firestore_Age;
+    String firestore_Age,image,s_name,s_locaion;
+    CircleImageView circleImageView;
+    TextView name,location;
 
 
     @SuppressLint("MissingInflatedId")
@@ -56,38 +68,15 @@ public class Home_frag extends Fragment {
 
         auth = FirebaseAuth.getInstance();
         firebaseFirestore = FirebaseFirestore.getInstance();
-        firebaseDatabase = FirebaseDatabase.getInstance();
         login_email_id =auth.getCurrentUser().getEmail();
 
-//        getfirestoredata();
-//        Toast.makeText(getActivity(), firestore_Age, Toast.LENGTH_SHORT).show();
-
-        /// drawer information
-//        firebaseFirestore.collection("User-ID").document(login_email_id).get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
-//            @Override
-//            public void onComplete(@NonNull Task<DocumentSnapshot> task) {
-//                DocumentSnapshot documentSnapshot = task.getResult();
-//                if(documentSnapshot!=null && documentSnapshot.exists()){
-//                    s_name=documentSnapshot.getString("Name");
-//                    s_email=documentSnapshot.getString("Email");
-//                    s_phone=documentSnapshot.getString("Phone");
-//                    s_age=documentSnapshot.getString("Age");
-//                    s_blood_group=documentSnapshot.getString("Blood_Group");
-//                    s_location=documentSnapshot.getString("Location");
-//
-//                    name.setText("Name : "+s_name);
-//                    location.setText("Location : "+s_location);
-//
-//
-//                }
-//            }
-//        });
 
 
 
-        /////
 
 
+
+        ///////
 
         ImageSlider imageSlider;
         imageSlider = view.findViewById(R.id.image_slider);
@@ -108,6 +97,14 @@ public class Home_frag extends Fragment {
         CardView assistant = view.findViewById(R.id.assistant);
         CardView report = view.findViewById(R.id.report);
         CardView campaign = view.findViewById(R.id.campaign);
+
+        // drawer image
+        // use header for using drawer
+        View header = navigationView.getHeaderView(0);
+        circleImageView = header.findViewById(R.id.drawar_image);
+        name =  header.findViewById(R.id.drawer_name);
+        location =  header.findViewById(R.id.drawer_locaion);
+        getimagefirebase();
 
 
         //cardview click
@@ -149,7 +146,8 @@ public class Home_frag extends Fragment {
         });
 
 
-
+        // image layout
+//        getimagefirebase();
 
         
         //image slide
@@ -165,6 +163,8 @@ public class Home_frag extends Fragment {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
 
+
+//                getimageshow();
                 switch (item.getItemId()) {
                     case R.id.mHome:
                         Toast.makeText(getActivity(), "Home", Toast.LENGTH_SHORT).show();
@@ -177,8 +177,9 @@ public class Home_frag extends Fragment {
                         break;
 
                     case R.id.mDashboard:
-                        Toast.makeText(getActivity(), "Dashboard", Toast.LENGTH_SHORT).show();
+                        startActivity(new Intent(getActivity(),Dashboard.class));
                         drawerLayout.closeDrawers();
+
                         break;
                     case R.id.mRate:
                         Toast.makeText(getActivity(), "Rate", Toast.LENGTH_SHORT).show();
@@ -189,11 +190,10 @@ public class Home_frag extends Fragment {
                         Toast.makeText(getActivity(), "Policy", Toast.LENGTH_SHORT).show();
                         drawerLayout.closeDrawers();
                         break;
-                    case R.id.update_information:
+                    case R.id.sign_out:
                         Toast.makeText(getActivity(), "Sign Out", Toast.LENGTH_SHORT).show();
                         FirebaseAuth.getInstance().signOut();
-                        Intent intent = new Intent(getActivity(), MainActivity.class);
-                        startActivity(intent);
+                        startActivity(new Intent(getActivity(), MainActivity.class));
                         getActivity().finish();
                         break;
 
@@ -248,6 +248,77 @@ public class Home_frag extends Fragment {
 
 
     }
+
+    private void getimagefirebase() {
+        firebaseFirestore = FirebaseFirestore.getInstance();
+        auth = FirebaseAuth.getInstance();
+        login_email_id=auth.getCurrentUser().getEmail();
+        Toast.makeText(getActivity(), login_email_id, Toast.LENGTH_SHORT).show();
+        firebaseFirestore.collection("User-ID").document(login_email_id).get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+            @Override
+            public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                DocumentSnapshot documentSnapshot = task.getResult();
+                image = documentSnapshot.getString("Image");
+                s_name = documentSnapshot.getString("Name");
+                s_locaion = documentSnapshot.getString("Location");
+                Glide.with(getActivity()).load(image).fitCenter().skipMemoryCache(true).into(circleImageView);
+                Toast.makeText(getActivity(), s_name, Toast.LENGTH_SHORT).show();
+
+                name.setText(s_name);
+                location.setText(s_locaion);
+                Toast.makeText(getActivity(), "Working", Toast.LENGTH_SHORT).show();
+
+
+            }
+        }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception e) {
+                Toast.makeText(getActivity(), "Failed Image", Toast.LENGTH_SHORT).show();
+
+            }
+        });
+
+
+
+
+
+
+
+
+
+
+
+    }
+
+    private void getimageshow() {
+        //////////
+        // get image form Firebase Storage and convert to image view with bitmap
+
+        StorageReference storageReference = FirebaseStorage.getInstance().getReference("Images/"+login_email_id+"/Profile Pic");
+        try {
+            File localfile = File.createTempFile("tempfile","jpg");
+            storageReference.getFile(localfile)
+                    .addOnSuccessListener(new OnSuccessListener<FileDownloadTask.TaskSnapshot>() {
+                        @Override
+                        public void onSuccess(FileDownloadTask.TaskSnapshot taskSnapshot) {
+                            Bitmap bitmap = BitmapFactory.decodeFile(localfile.getAbsolutePath());
+                            circleImageView.setImageBitmap(bitmap);
+
+                        }
+                    }).addOnFailureListener(new OnFailureListener() {
+                        @Override
+                        public void onFailure(@NonNull Exception e) {
+                            Toast.makeText(getActivity(), "Image Load Faild", Toast.LENGTH_SHORT).show();
+
+                        }
+                    });
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+//////////////
+    }
+
 
 
 

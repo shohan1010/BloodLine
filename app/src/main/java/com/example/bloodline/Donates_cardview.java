@@ -34,7 +34,7 @@ public class Donates_cardview extends AppCompatActivity {
     }
 
     private void setUpRecyclerView() {
-        Query query = notebookRef.orderBy("Age", Query.Direction.DESCENDING);
+        Query query = notebookRef.orderBy("Name", Query.Direction.DESCENDING);
 
         FirestoreRecyclerOptions<User_Request> options = new FirestoreRecyclerOptions.Builder<User_Request>()
                 .setQuery(query, User_Request.class)

@@ -23,26 +23,7 @@ public class Search_frag extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view= inflater.inflate(R.layout.fragment_search_frag, container, false);
-        searchView = view.findViewById(R.id.search_id_search_frag);
         button = view.findViewById(R.id.apply_search_frag);
-
-        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
-            @Override
-            public boolean onQueryTextSubmit(String query) {
-                button.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        Toast.makeText(getActivity(), "working", Toast.LENGTH_SHORT).show();
-                    }
-                });
-                return false;
-            }
-
-            @Override
-            public boolean onQueryTextChange(String newText) {
-                return false;
-            }
-        });
 
 
 

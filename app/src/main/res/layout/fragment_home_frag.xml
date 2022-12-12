@@ -73,6 +73,8 @@
                 android:layout_marginLeft="6dp"
                 android:layout_marginRight="6dp"
                 android:layout_marginBottom="6dp"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="8dp"
                 android:focusable="true">
 
                 <LinearLayout

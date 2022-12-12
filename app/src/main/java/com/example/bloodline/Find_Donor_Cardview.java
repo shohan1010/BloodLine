@@ -29,6 +29,7 @@ public class Find_Donor_Cardview extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_find_donor_cardview);
+        getSupportActionBar().setTitle("Find Donnor");
 
         setUpRecyclerView();
     }

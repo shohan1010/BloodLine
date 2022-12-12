@@ -14,7 +14,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -23,7 +22,6 @@ import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
@@ -35,18 +33,17 @@ import java.io.File;
 import java.io.IOException;
 
 import de.hdodenhof.circleimageview.CircleImageView;
-
+// DatabaseReference = Realtime Detabase
+// DocumentSnapshot = Firebase Firestore
 
 public class Profile_frag extends Fragment {
     FirebaseAuth auth;
     FirebaseFirestore firestore;
-    FirebaseStorage firebaseStorage;
     FirebaseDatabase firebaseDatabase;
-    DatabaseReference databaseReference;
+
     String logEmail;
     Button update_information1;
     private ProgressDialog progressDialog;
-    ImageView edit_profile_pic;
 
     TextView name,email,phone,age,blood_group,location;
     String s_name,s_email,s_phone,s_age,s_blood_group,s_location,s_image;
@@ -74,13 +71,12 @@ public class Profile_frag extends Fragment {
         location=view.findViewById(R.id.location_show_profile);
         email=view.findViewById(R.id.email_show_profile);
         blood_group=view.findViewById(R.id.blood_group_show_profile);
-        update_information1=view.findViewById(R.id.update_information);
+        update_information1=view.findViewById(R.id.sign_out);
         imageView = view.findViewById(R.id.user_info_section);
 
 
         auth= FirebaseAuth.getInstance();
         firebaseDatabase = FirebaseDatabase.getInstance();
-        databaseReference = firebaseDatabase.getReference().child("User-ID");
 
         if(auth.getCurrentUser()!=null){
             logEmail=auth.getCurrentUser().getEmail();
@@ -148,14 +144,6 @@ public class Profile_frag extends Fragment {
             }
         });
 
-        // glide
-//        String s = s_image;
-//        Glide.with(this).load(s).fitCenter().into(imageView);
-//        String url = "https://firebasestorage.googleapis.com/v0/b/fir-1-b3068.appspot.com/o/Images%2Fsabbirshohan80%40gmail.com%2FProfile%20Pic?alt=media&token=4c3460cf-4a8a-4f1c-ba38-0cf26b58d91e";
-//        Glide.with(this).load(url).fitCenter().skipMemoryCache(true).into(imageView);
-
-        // picaso
-//        Picasso.get().load(s_image).into(imageView);
 
 
 
@@ -206,11 +194,7 @@ public class Profile_frag extends Fragment {
 //////////////
     }
 
-    private void firestore_to_realtime(){
-        String a = s_name.trim();
-        databaseReference.child(logEmail).setValue(a);
-//        Toast.makeText(getActivity(), a, Toast.LENGTH_SHORT).show();
-    }
+
 
 
 }

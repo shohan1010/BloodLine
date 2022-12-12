@@ -13,13 +13,197 @@
         tools:ignore="ExtraText">
 
         //
+        <!--        name-->
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/a1"
+            android:id="@+id/a11"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="380dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="50dp"
             android:layout_below="@+id/button_choose_image"
+            android:hint="@string/name"
+            android:paddingStart="25sp"
+            app:boxStrokeColor="#2196F3"
+            app:boxStrokeErrorColor="@color/red"
+            app:hintTextColor="#2196F3"
+            app:errorTextColor="@color/red"
+
+
+
+            app:endIconMode="clear_text"
+            app:startIconTint="@color/custom"
+            app:startIconDrawable="@drawable/profile_icon_navigation"
+            tools:ignore="MissingConstraints,RtlSymmetry">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/update_name"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:inputType="textPersonName"
+
+
+                tools:ignore="MissingConstraints" />
+        </com.google.android.material.textfield.TextInputLayout>
+        <!--        phone-->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/a12"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="380dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/a11"
+            android:layout_marginTop="18sp"
+            android:hint="@string/phone"
+            android:paddingStart="25sp"
+            app:boxStrokeColor="#2196F3"
+            app:boxStrokeErrorColor="@color/red"
+
+
+            app:endIconMode="clear_text"
+            app:errorTextColor="@color/red"
+            app:hintTextColor="#2196F3"
+            app:startIconTint="@color/custom"
+            app:startIconDrawable="@drawable/phone_icon_register"
+            tools:ignore="MissingConstraints,RtlSymmetry,UnknownId">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/update_phone"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:inputType="phone"
+                android:maxLength="11"
+
+
+                tools:ignore="MissingConstraints" />
+        </com.google.android.material.textfield.TextInputLayout>
+        <!--        blood group-->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/a13"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+            android:layout_width="380dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/a12"
+            android:layout_marginTop="18sp"
+            android:hint="@string/blood_group"
+            android:paddingStart="25sp"
+            app:boxStrokeColor="#2196F3"
+            app:boxStrokeErrorColor="@color/red"
+            app:errorTextColor="@color/red"
+            app:hintTextColor="#2196F3"
+            app:startIconTint="@color/custom"
+            app:startIconDrawable="@drawable/blood_grpup_icon_register"
+            tools:ignore="MissingConstraints,RtlSymmetry">
+
+            <AutoCompleteTextView
+                android:id="@+id/update_blood_group"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/a5"
+                android:inputType="none"
+                android:textColorHint="#757575"
+                tools:ignore="LabelFor" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+        <!--        gender-->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/a14"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+            android:layout_width="380dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/a13"
+            android:layout_marginTop="18sp"
+            android:hint="@string/gender"
+            android:paddingStart="25sp"
+            app:boxStrokeColor="#2196F3"
+            app:boxStrokeErrorColor="@color/red"
+            app:errorTextColor="@color/red"
+            app:hintTextColor="#2196F3"
+            app:startIconTint="@color/custom"
+            app:startIconDrawable="@drawable/gender"
+
+            tools:ignore="MissingConstraints,RtlSymmetry">
+
+            <AutoCompleteTextView
+                android:id="@+id/update_gender"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/a6"
+                android:inputType="none"
+                android:textColorHint="#757575"
+                tools:ignore="LabelFor" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+        <!--        age-->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/a15"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="380dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/a14"
+            android:layout_marginTop="18sp"
+            android:hint="@string/age"
+            android:paddingStart="25sp"
+            app:boxStrokeColor="#2196F3"
+            app:boxStrokeErrorColor="@color/red"
+
+
+            app:endIconMode="clear_text"
+            app:errorTextColor="@color/red"
+            app:hintTextColor="#2196F3"
+            app:startIconTint="@color/custom"
+            app:startIconDrawable="@drawable/profile_icon_navigation"
+            tools:ignore="MissingConstraints,RtlSymmetry">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/update_age"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:inputType="phone"
+                android:maxLength="2"
+
+
+                tools:ignore="MissingConstraints" />
+        </com.google.android.material.textfield.TextInputLayout>
+        <!--        location-->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/a16"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="380dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/a15"
+            android:layout_marginTop="18sp"
+            android:hint="@string/location"
+            android:paddingStart="25sp"
+            app:boxStrokeColor="#2196F3"
+            app:boxStrokeErrorColor="@color/red"
+
+
+            app:endIconMode="clear_text"
+            app:errorTextColor="@color/red"
+            app:hintTextColor="#2196F3"
+            app:startIconTint="@color/custom"
+            app:startIconDrawable="@drawable/location_icon_register"
+            tools:ignore="MissingConstraints,RtlSymmetry,UnknownId">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/update_location"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:inputType="text"
+
+
+                tools:ignore="MissingConstraints" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        ///
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/a17"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="380dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="18dp"
+            android:layout_below="@+id/a16"
             android:hint="@string/glucose"
             android:paddingStart="25sp"
             app:boxStrokeColor="#2196F3"
@@ -34,7 +218,7 @@
             tools:ignore="MissingConstraints,RtlSymmetry">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/register_name"
+                android:id="@+id/update_glucose"
                 android:layout_width="match_parent"
                 android:layout_height="55dp"
                 android:inputType="numberDecimal"
@@ -44,11 +228,11 @@
         </com.google.android.material.textfield.TextInputLayout>
         <!--        email-->
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/email_textinput"
+            android:id="@+id/a18"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="380dp"
             android:layout_height="wrap_content"
-            android:layout_below="@id/a1"
+            android:layout_below="@id/a17"
             android:layout_marginTop="18sp"
             android:hint="@string/cholesterol"
             android:paddingStart="25sp"
@@ -66,7 +250,7 @@
             tools:ignore="MissingConstraints,RtlSymmetry,UnknownId">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/register_email"
+                android:id="@+id/update_cholesterol"
                 android:layout_width="match_parent"
                 android:layout_height="55dp"
                 android:inputType="numberDecimal"
@@ -76,11 +260,11 @@
         </com.google.android.material.textfield.TextInputLayout>
         <!--        password-->
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/password_textinput"
+            android:id="@+id/a19"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="380dp"
             android:layout_height="wrap_content"
-            android:layout_below="@id/email_textinput"
+            android:layout_below="@id/a18"
             android:layout_marginTop="18sp"
             android:hint="@string/bilir_ubin"
             android:paddingStart="25sp"
@@ -95,7 +279,7 @@
             tools:ignore="MissingConstraints,RtlSymmetry,UnknownId">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/register_password"
+                android:id="@+id/update_Bilir_ubin"
                 android:layout_width="match_parent"
                 android:layout_height="55dp"
                 android:inputType="numberDecimal"
@@ -107,11 +291,11 @@
         </com.google.android.material.textfield.TextInputLayout>
         <!--        again password-->
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/confirm_password_textinput"
+            android:id="@+id/a20"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="380dp"
             android:layout_height="wrap_content"
-            android:layout_below="@id/password_textinput"
+            android:layout_below="@id/a19"
             android:layout_marginTop="18sp"
             android:hint="@string/rbc"
             android:paddingStart="25sp"
@@ -129,7 +313,7 @@
             tools:ignore="MissingConstraints,RtlSymmetry,UnknownId">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/register_password_again"
+                android:id="@+id/update_rbc"
                 android:layout_width="match_parent"
                 android:layout_height="55dp"
                 android:inputType="numberDecimal"
@@ -140,11 +324,11 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/password_textinput1"
+            android:id="@+id/a21"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="380dp"
             android:layout_height="wrap_content"
-            android:layout_below="@id/confirm_password_textinput"
+            android:layout_below="@id/a20"
             android:layout_marginTop="18sp"
             android:hint="@string/mcv"
             android:paddingStart="25sp"
@@ -159,7 +343,7 @@
             tools:ignore="MissingConstraints,RtlSymmetry,UnknownId">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/register_password1"
+                android:id="@+id/update_mcv"
                 android:layout_width="match_parent"
                 android:layout_height="55dp"
                 android:inputType="numberDecimal"
@@ -171,11 +355,11 @@
         </com.google.android.material.textfield.TextInputLayout>
         <!--        again password-->
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/confirm_password_textinput1"
+            android:id="@+id/a22"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="380dp"
             android:layout_height="wrap_content"
-            android:layout_below="@id/password_textinput1"
+            android:layout_below="@id/a21"
             android:layout_marginTop="18sp"
             android:hint="@string/platelets"
             android:paddingStart="25sp"
@@ -189,8 +373,10 @@
             app:startIconDrawable="@drawable/name_icon_register"
             tools:ignore="MissingConstraints,RtlSymmetry,UnknownId">
 
+
+
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/register_password_again1"
+                android:id="@+id/update_platelets"
                 android:layout_width="match_parent"
                 android:layout_height="55dp"
                 android:inputType="numberDecimal"
@@ -228,7 +414,7 @@
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="50dp"
-            android:layout_below="@+id/confirm_password_textinput1"
+            android:layout_below="@+id/a22"
 
             android:text="@string/update_information" />
 

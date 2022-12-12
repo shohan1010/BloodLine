@@ -36,7 +36,7 @@ public class Ambulance_cardview extends AppCompatActivity {
     }
 
     private void setUpRecyclerView() {
-        Query query = notebookRef.orderBy("Age", Query.Direction.DESCENDING);
+        Query query = notebookRef.orderBy("Name", Query.Direction.DESCENDING);
 
         FirestoreRecyclerOptions<User_Ambulance> options = new FirestoreRecyclerOptions.Builder<User_Ambulance>()
                 .setQuery(query, User_Ambulance.class)
@@ -78,6 +78,7 @@ public class Ambulance_cardview extends AppCompatActivity {
             @Override
             public boolean onQueryTextChange(String s) {
                 // convert to upercase
+
                 process_search(s);
                 return false;
             }

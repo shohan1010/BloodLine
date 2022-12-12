@@ -73,6 +73,8 @@ public class Register extends AppCompatActivity {
         arrayadaptar_blood = new ArrayAdapter<>(this,R.layout.dropdown_list_menu, items_blood);
         arrayadaptar_gender = new ArrayAdapter<>(this,R.layout.dropdown_list_menu, items_gender);
 
+
+
         blood_group.setAdapter(arrayadaptar_blood);
         blood_group.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override

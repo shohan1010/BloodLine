@@ -7,13 +7,17 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import android.app.AlertDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 public class MainActivity_2 extends AppCompatActivity {
     BottomNavigationView bnView;
+    FloatingActionButton blood;
 
 
 
@@ -25,8 +29,18 @@ public class MainActivity_2 extends AppCompatActivity {
 //        bnView =findViewById(R.id.bnView_userProfile);
         //use this to disable index 2 navication item
         bnView = findViewById(R.id.bnView_userProfile);
+        blood = findViewById(R.id.floating_bar_home_activity);
         bnView.setBackground(null);
         bnView.getMenu().getItem(2).setEnabled(false);
+
+
+        blood.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity_2.this,Dashboard.class));
+
+            }
+        });
 
 
 

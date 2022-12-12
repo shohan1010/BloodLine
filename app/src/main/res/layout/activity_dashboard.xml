@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Dashboard">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/image_dashboard"
+            android:layout_marginTop="20dp"
+            android:layout_width="500dp"
+            android:layout_height="200dp"
+            android:src="@drawable/my_pic"
+            >
+
+        </de.hdodenhof.circleimageview.CircleImageView>
+
+
+
+
+
+
+
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30sp"
+            android:layout_below="@id/imageView7"
+            android:text="Times Donated"
+            android:textSize="20sp"
+             />
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="45sp"
+            android:layout_marginTop="2dp"
+            android:paddingRight="10dp"
+            android:layout_alignParentEnd="true"
+            android:layout_below="@+id/imageView8"
+            android:text="Blood Type"
+            android:textSize="20sp"
+             />
+
+        <TextView
+            android:id="@+id/textView5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="28dp"
+            android:layout_below="@+id/textView3"
+            android:layout_marginTop="100dp"
+            android:text="Last Donated:"
+            android:textSize="20sp"
+             />
+
+        <TextView
+            android:id="@+id/donate_times_dashboard"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:text="0"
+            android:layout_below="@id/imageView7"
+            android:textColor="@color/custom"
+            android:textSize="20sp"
+             />
+
+        <TextView
+            android:id="@+id/name_dashboard"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="33dp"
+            android:layout_centerHorizontal="true"
+            android:drawableStart="@drawable/name_icon_register"
+            android:text="Your Name"
+            android:textSize="20sp"
+            android:layout_below="@+id/image_dashboard"
+
+             />
+
+        <TextView
+            android:id="@+id/location_dashboard"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="84dp"
+            android:layout_marginTop="8dp"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/name_dashboard"
+            android:drawableStart="@drawable/location_icon_register"
+            android:text="Your Location"
+            android:textSize="20sp"
+            />
+
+        <TextView
+            android:id="@+id/blood_group_dashboard"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="9dp"
+            android:text="AB+"
+            android:paddingRight="5dp"
+            android:layout_alignParentRight="true"
+            android:layout_below="@+id/imageView8"
+            android:textColor="@color/custom"
+            android:textSize="20sp"
+            />
+
+        <TextView
+            android:id="@+id/last_donation_dashboard"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:text="11/10/22"
+            android:paddingStart="5dp"
+            android:layout_marginTop="100dp"
+            android:layout_below="@+id/textView3"
+            android:textColor="@color/custom"
+            android:textSize="20sp"
+           />
+
+        <Button
+            android:id="@+id/update_donation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="70dp"
+            android:text="Update Donation"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/textView5"
+            />
+
+        <ImageView
+            android:id="@+id/imageView7"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="80dp"
+            android:layout_marginBottom="5dp"
+            android:layout_marginTop="101dp"
+            android:layout_below="@id/location_dashboard"
+            app:srcCompat="@drawable/times_donated" />
+
+        <ImageView
+            android:id="@+id/imageView8"
+            android:layout_width="50dp"
+            android:layout_height="40sp"
+            android:layout_marginRight="70dp"
+            android:layout_marginBottom="5dp"
+            android:layout_alignParentRight="true"
+            android:layout_below="@id/location_dashboard"
+            android:layout_marginTop="105dp"
+            app:srcCompat="@drawable/blood_grpup_icon_register" />
+        </RelativeLayout>
+</ScrollView>
