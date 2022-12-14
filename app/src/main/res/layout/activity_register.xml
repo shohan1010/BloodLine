@@ -31,21 +31,21 @@
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="380dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="50dp"
             android:layout_below="@+id/a_img"
+            android:layout_marginTop="50dp"
             android:hint="@string/name"
-            android:paddingStart="25sp"
+            android:paddingStart="20dp"
             app:boxStrokeColor="#2196F3"
             app:boxStrokeErrorColor="@color/red"
-            app:hintTextColor="#2196F3"
-            app:errorTextColor="@color/red"
-
-
             app:counterEnabled="true"
             app:counterMaxLength="30"
+
+
             app:endIconMode="clear_text"
-            app:startIconTint="@color/custom"
+            app:errorTextColor="@color/red"
+            app:hintTextColor="#2196F3"
             app:startIconDrawable="@drawable/profile_icon_navigation"
+            app:startIconTint="@color/custom"
             tools:ignore="MissingConstraints,RtlSymmetry">
 
             <com.google.android.material.textfield.TextInputEditText
@@ -66,20 +66,19 @@
             android:layout_below="@id/a1"
             android:layout_marginTop="18sp"
             android:hint="@string/email"
-            android:paddingStart="25sp"
+            android:paddingStart="20dp"
             app:boxStrokeColor="#2196F3"
             app:boxStrokeErrorColor="@color/red"
             app:counterEnabled="true"
             app:counterMaxLength="30"
-            app:helperTextEnabled="true"
-
-
-
             app:endIconMode="clear_text"
+
+
             app:errorTextColor="@color/red"
+            app:helperTextEnabled="true"
             app:hintTextColor="#2196F3"
-            app:startIconTint="@color/custom"
             app:startIconDrawable="@drawable/email_icon_register"
+            app:startIconTint="@color/custom"
             tools:ignore="MissingConstraints,RtlSymmetry,UnknownId">
 
             <com.google.android.material.textfield.TextInputEditText
@@ -100,22 +99,20 @@
             android:layout_below="@id/email_textinput"
             android:layout_marginTop="18sp"
             android:hint="@string/password"
-            android:paddingStart="25sp"
+            android:paddingStart="20dp"
             app:boxStrokeColor="#2196F3"
             app:boxStrokeErrorColor="@color/red"
             app:counterEnabled="true"
             app:counterMaxLength="20"
-            app:helperText="Enter Minimum 6 Char"
-            app:helperTextEnabled="true"
-
-
-
-
             app:endIconMode="password_toggle"
             app:errorTextColor="@color/red"
+
+
+            app:helperText="Enter Minimum 6 Char"
+            app:helperTextEnabled="true"
             app:hintTextColor="#2196F3"
-            app:startIconTint="@color/custom"
             app:startIconDrawable="@drawable/pasword_icon_register"
+            app:startIconTint="@color/custom"
             tools:ignore="MissingConstraints,RtlSymmetry,UnknownId">
 
             <com.google.android.material.textfield.TextInputEditText
@@ -124,7 +121,6 @@
                 android:layout_height="55dp"
                 android:inputType="textPassword"
                 android:maxLength="20"
-
 
 
                 tools:ignore="MissingConstraints" />
@@ -138,19 +134,19 @@
             android:layout_below="@id/password_textinput"
             android:layout_marginTop="18sp"
             android:hint="Confirm Password"
-            android:paddingStart="25sp"
+            android:paddingStart="20dp"
             app:boxStrokeColor="#2196F3"
             app:boxStrokeErrorColor="@color/red"
             app:counterEnabled="true"
             app:counterMaxLength="20"
-            app:helperTextEnabled="true"
-
-
             app:endIconMode="password_toggle"
+
+
             app:errorTextColor="@color/red"
+            app:helperTextEnabled="true"
             app:hintTextColor="#2196F3"
-            app:startIconTint="@color/custom"
             app:startIconDrawable="@drawable/pasword_icon_register"
+            app:startIconTint="@color/custom"
             tools:ignore="MissingConstraints,RtlSymmetry,UnknownId">
 
             <com.google.android.material.textfield.TextInputEditText
@@ -172,7 +168,7 @@
             android:layout_below="@id/confirm_password_textinput"
             android:layout_marginTop="18sp"
             android:hint="@string/phone"
-            android:paddingStart="25sp"
+            android:paddingStart="20dp"
             app:boxStrokeColor="#2196F3"
             app:boxStrokeErrorColor="@color/red"
             app:counterEnabled="true"
@@ -182,8 +178,8 @@
             app:endIconMode="clear_text"
             app:errorTextColor="@color/red"
             app:hintTextColor="#2196F3"
-            app:startIconTint="@color/custom"
             app:startIconDrawable="@drawable/phone_icon_register"
+            app:startIconTint="@color/custom"
             tools:ignore="MissingConstraints,RtlSymmetry,UnknownId">
 
             <com.google.android.material.textfield.TextInputEditText
@@ -205,13 +201,13 @@
             android:layout_below="@+id/a5"
             android:layout_marginTop="18sp"
             android:hint="Blood Group"
-            android:paddingStart="25sp"
+            android:paddingStart="20dp"
             app:boxStrokeColor="#2196F3"
             app:boxStrokeErrorColor="@color/red"
             app:errorTextColor="@color/red"
             app:hintTextColor="#2196F3"
-            app:startIconTint="@color/custom"
             app:startIconDrawable="@drawable/blood_grpup_icon_register"
+            app:startIconTint="@color/custom"
             tools:ignore="MissingConstraints,RtlSymmetry">
 
             <AutoCompleteTextView
@@ -233,13 +229,13 @@
             android:layout_below="@+id/a6"
             android:layout_marginTop="18sp"
             android:hint="Gender"
-            android:paddingStart="25sp"
+            android:paddingStart="20dp"
             app:boxStrokeColor="#2196F3"
             app:boxStrokeErrorColor="@color/red"
             app:errorTextColor="@color/red"
             app:hintTextColor="#2196F3"
-            app:startIconTint="@color/custom"
             app:startIconDrawable="@drawable/gender"
+            app:startIconTint="@color/custom"
 
             tools:ignore="MissingConstraints,RtlSymmetry">
 
@@ -262,7 +258,7 @@
             android:layout_below="@+id/a7"
             android:layout_marginTop="18sp"
             android:hint="@string/age"
-            android:paddingStart="25sp"
+            android:paddingStart="20dp"
             app:boxStrokeColor="#2196F3"
             app:boxStrokeErrorColor="@color/red"
             app:counterEnabled="true"
@@ -272,8 +268,8 @@
             app:endIconMode="clear_text"
             app:errorTextColor="@color/red"
             app:hintTextColor="#2196F3"
-            app:startIconTint="@color/custom"
             app:startIconDrawable="@drawable/profile_icon_navigation"
+            app:startIconTint="@color/custom"
             tools:ignore="MissingConstraints,RtlSymmetry">
 
             <com.google.android.material.textfield.TextInputEditText
@@ -295,7 +291,7 @@
             android:layout_below="@id/a8"
             android:layout_marginTop="18sp"
             android:hint="@string/location"
-            android:paddingStart="25sp"
+            android:paddingStart="20dp"
             app:boxStrokeColor="#2196F3"
             app:boxStrokeErrorColor="@color/red"
             app:counterEnabled="true"
@@ -305,8 +301,8 @@
             app:endIconMode="clear_text"
             app:errorTextColor="@color/red"
             app:hintTextColor="#2196F3"
-            app:startIconTint="@color/custom"
             app:startIconDrawable="@drawable/location_icon_register"
+            app:startIconTint="@color/custom"
             tools:ignore="MissingConstraints,RtlSymmetry,UnknownId">
 
             <com.google.android.material.textfield.TextInputEditText

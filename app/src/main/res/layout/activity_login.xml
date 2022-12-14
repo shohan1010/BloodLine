@@ -10,16 +10,16 @@
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/a1"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        android:layout_width="380dp"
+        android:layout_width="360dp"
         android:layout_height="wrap_content"
         android:layout_below="@id/imageView2"
         android:layout_marginTop="50dp"
         android:hint="@string/email"
-        android:paddingStart="25sp"
         app:boxStrokeColor="#2196F3"
         app:boxStrokeErrorColor="@color/red"
         app:hintTextColor="#2196F3"
         app:errorTextColor="@color/red"
+        android:layout_centerHorizontal="true"
 
 
         app:counterEnabled="true"
@@ -57,12 +57,12 @@
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/email_textinput"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        android:layout_width="380dp"
+        android:layout_width="360dp"
         android:layout_height="wrap_content"
         android:layout_below="@id/a1"
         android:layout_marginTop="50dp"
         android:hint="@string/password"
-        android:paddingStart="25sp"
+        android:layout_centerHorizontal="true"
         app:boxStrokeColor="#03A9F4"
         app:boxStrokeErrorColor="#03A9F4"
         app:counterEnabled="true"

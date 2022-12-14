@@ -41,7 +41,7 @@ public class Request_Blood_Cardview extends AppCompatActivity {
 
         blood_group_get = findViewById(R.id.register_blood_group);
         button  = findViewById(R.id.request_button_qequest_blood);
-        hospital_edit = findViewById(R.id.hospital_request_blood);
+//        hospital_edit = findViewById(R.id.hospital_request_blood);
         location_edit = findViewById(R.id.location_request_blood);
         phone_edit = findViewById(R.id.phone_request_blood);
         note_edit = findViewById(R.id.add_a_note_request_blood);
@@ -71,10 +71,40 @@ public class Request_Blood_Cardview extends AppCompatActivity {
                 phone = phone_edit.getText().toString();
                 note = note_edit.getText().toString();
                 name = name_edit.getText().toString();
-                addinformationdatabase(hospital,phone,blood_group,location,note,name);
-                Toast.makeText(Request_Blood_Cardview.this, "Blood Request is done.", Toast.LENGTH_SHORT).show();
-                startActivity(new Intent(Request_Blood_Cardview.this,Request_Finish.class));
-                finish();
+                String blood = blood_group_get.getText().toString();
+
+                if (name.isEmpty()){
+                    Toast.makeText(Request_Blood_Cardview.this, "Name is empty", Toast.LENGTH_SHORT).show();
+
+                }
+                else if (location.isEmpty()){
+                    Toast.makeText(Request_Blood_Cardview.this, "Location is empty", Toast.LENGTH_SHORT).show();
+
+                }
+//                else if (hospital.isEmpty()){
+//                    Toast.makeText(Request_Blood_Cardview.this, "Hospital is empty", Toast.LENGTH_SHORT).show();
+//
+//                }
+                else if (blood.isEmpty()){
+                    Toast.makeText(Request_Blood_Cardview.this, "Blood Group is empty", Toast.LENGTH_SHORT).show();
+
+                }
+                else if (phone.isEmpty()){
+                    Toast.makeText(Request_Blood_Cardview.this, "Phone is empty", Toast.LENGTH_SHORT).show();
+
+                }
+                else if (note.isEmpty()){
+                    Toast.makeText(Request_Blood_Cardview.this, "Note is empty", Toast.LENGTH_SHORT).show();
+
+                }
+                else {
+                    addinformationdatabase(phone,blood_group,location,note,name);
+                    Toast.makeText(Request_Blood_Cardview.this, "Blood Request is done.", Toast.LENGTH_SHORT).show();
+                    startActivity(new Intent(Request_Blood_Cardview.this,Request_Finish.class));
+                    finish();
+
+                }
+
             }
         });
 
@@ -85,7 +115,7 @@ public class Request_Blood_Cardview extends AppCompatActivity {
 
     }
 
-    private void addinformationdatabase(String hospital, String phone,  String blood_group, String location, String note,String name) {
+    private void addinformationdatabase(String phone,  String blood_group, String location, String note,String name) {
         //Adding User information in Database
         FirebaseFirestore db = FirebaseFirestore.getInstance();
 
@@ -94,7 +124,7 @@ public class Request_Blood_Cardview extends AppCompatActivity {
 //                DatabaseReference databaseReference = firebaseDatabase.getReference();
         HashMap<String, String> m = new HashMap<>();
         m.put("Location", location);
-        m.put("Hospital", hospital);
+//        m.put("Hospital", hospital);
         m.put("Blood_Group", blood_group);
         m.put("Phone", phone);
         m.put("Note", note);
